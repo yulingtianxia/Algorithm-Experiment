@@ -14,6 +14,8 @@
 		A41885F31A23047300829E0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A41885F11A23047300829E0B /* Main.storyboard */; };
 		A41885FF1A23047300829E0B /* ConvexHullTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41885FE1A23047300829E0B /* ConvexHullTests.swift */; };
 		A41886091A2304F900829E0B /* BruteForceCH.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41886081A2304F900829E0B /* BruteForceCH.swift */; };
+		A41EF85E1A240D4F0014A61F /* PointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41EF85D1A240D4F0014A61F /* PointView.swift */; };
+		A42800461A241ACF00F28C78 /* HelpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42800451A241ACF00F28C78 /* HelpMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		A41885FD1A23047300829E0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A41885FE1A23047300829E0B /* ConvexHullTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvexHullTests.swift; sourceTree = "<group>"; };
 		A41886081A2304F900829E0B /* BruteForceCH.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BruteForceCH.swift; sourceTree = "<group>"; };
+		A41EF85D1A240D4F0014A61F /* PointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointView.swift; sourceTree = "<group>"; };
+		A42800451A241ACF00F28C78 /* HelpMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +83,11 @@
 		A41885E81A23047300829E0B /* ConvexHull */ = {
 			isa = PBXGroup;
 			children = (
+				A42800471A241AD600F28C78 /* Uitils */,
+				A41EF8601A240D6A0014A61F /* Algorithm */,
+				A41EF85F1A240D590014A61F /* Views */,
 				A41885EB1A23047300829E0B /* AppDelegate.swift */,
 				A41885ED1A23047300829E0B /* ViewController.swift */,
-				A41886081A2304F900829E0B /* BruteForceCH.swift */,
-				A41388BC1A2363EA00B14710 /* Background.swift */,
 				A41885EF1A23047300829E0B /* Images.xcassets */,
 				A41885F11A23047300829E0B /* Main.storyboard */,
 				A41885E91A23047300829E0B /* Supporting Files */,
@@ -113,6 +118,31 @@
 				A41885FD1A23047300829E0B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A41EF85F1A240D590014A61F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A41388BC1A2363EA00B14710 /* Background.swift */,
+				A41EF85D1A240D4F0014A61F /* PointView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		A41EF8601A240D6A0014A61F /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				A41886081A2304F900829E0B /* BruteForceCH.swift */,
+			);
+			name = Algorithm;
+			sourceTree = "<group>";
+		};
+		A42800471A241AD600F28C78 /* Uitils */ = {
+			isa = PBXGroup;
+			children = (
+				A42800451A241ACF00F28C78 /* HelpMethod.swift */,
+			);
+			name = Uitils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +244,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A41EF85E1A240D4F0014A61F /* PointView.swift in Sources */,
+				A42800461A241ACF00F28C78 /* HelpMethod.swift in Sources */,
 				A41885EE1A23047300829E0B /* ViewController.swift in Sources */,
 				A41885EC1A23047300829E0B /* AppDelegate.swift in Sources */,
 				A41886091A2304F900829E0B /* BruteForceCH.swift in Sources */,

@@ -9,7 +9,7 @@
 import Cocoa
 
 protocol ConvexHullGenerator{
-    func generateConvexHull(points:[CGPoint])->[CGPoint]
+    func generateConvexHull(inout points:[PointView])
 }
 
 class ViewController: NSViewController {

@@ -10,7 +10,7 @@ import Cocoa
 
 class Background: NSView {
     
-    var points:[CGPoint] = []
+    var points:[PointView] = []
     var generator:ConvexHullGenerator!
     
     override func drawRect(dirtyRect: NSRect) {
@@ -20,8 +20,14 @@ class Background: NSView {
         }
         
         var path = CGPathCreateMutable()
-        CGPathAddLines(path, nil, points, UInt(points.count))
-        CGPathAddLineToPoint(path, nil, points[0].x, points[0].y)
+        var locations:[CGPoint] = []
+        for point in points {
+            if point.isConvexHullNode {
+                locations.append(point.position)
+            }
+        }
+        CGPathAddLines(path, nil, locations, UInt(locations.count))
+        CGPathCloseSubpath(path)
         var context = NSGraphicsContext.currentContext()?.CGContext
         CGContextClearRect(context, NSRect(origin: CGPointZero, size: frame.size))
         CGContextAddPath(context, path)
@@ -34,39 +40,25 @@ class Background: NSView {
     }
     
     override func viewWillMoveToWindow(newWindow: NSWindow?) {
+        super.viewWillMoveToWindow(newWindow)
         generator = BruteForceCH()
     }
     
     override func mouseUp(theEvent: NSEvent) {
-        let location = convertPoint(theEvent.locationInWindow, fromView: nil)
-        points.append(location)
-        addPointViews([location])
-        makeConvexHull()
-    }
-    
-    override func mouseDragged(theEvent: NSEvent) {
-        let location =  convertPoint(theEvent.locationInWindow, fromView: nil)
-        
-    }
-    
-    func addPointViews(points:[CGPoint]) {
-        let length:CGFloat = 25
-        for location in points {
-            let pointView = NSImageView(frame: NSRect(x: location.x - length/2, y: location.y - length/2, width: length, height: length))
-            pointView.image = NSImage(named: "point")
+        if theEvent.clickCount > 1 {
+            let location = convertPoint(theEvent.locationInWindow, fromView: nil)
+            let pointView = PointView(location: location)
+            points.append(pointView)
             addSubview(pointView)
+            makeConvexHull()
         }
     }
     
-    func clearAllPoints() {
-        subviews.removeAll(keepCapacity: false)
-    }
-    
     func makeConvexHull() {
-        points = generator.generateConvexHull(points)
-        clearAllPoints()
-        addPointViews(points)
+        generator.generateConvexHull(&points)
         setNeedsDisplayInRect(frame)
     }
+    
+    
     
 }

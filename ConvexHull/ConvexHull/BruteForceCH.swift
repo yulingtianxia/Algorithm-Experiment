@@ -10,7 +10,7 @@ import Cocoa
 
 class BruteForceCH: NSObject,ConvexHullGenerator {
     
-    func generateConvexHull(var points:[CGPoint]) -> [CGPoint] {
+    func generateConvexHull(inout points:[PointView]){
         
         func calculatePoint(pointP:CGPoint,onLine line:(pointA:CGPoint,pointB:CGPoint)) -> CGFloat {
             return (pointP.y - line.pointA.y) * (line.pointB.x - line.pointA.x) - (line.pointB.y - line.pointA.y) * (pointP.x - line.pointA.x)
@@ -23,26 +23,31 @@ class BruteForceCH: NSObject,ConvexHullGenerator {
             return AB && AC && BC
         }
         
+        for point in points {
+            point.isConvexHullNode = true
+        }
+        
         if points.count <= 3 {
-            return points
+            return
         }
         
         pointLoop: for var index = 0; index < points.count; ++index {
             var point1 = points[index]
             for point2 in points {
-                if point2 == point1 {
+                if !point2.isConvexHullNode || point2 == point1 {
                     continue
                 }
                 for point3 in points {
-                    if point3 == point1 || point3 == point2 {
+                    if !point3.isConvexHullNode || point3 == point1 || point3 == point2 {
                         continue
                     }
                     for point4 in points {
-                        if point4 == point1 || point4 == point2 || point4 == point3 {
+                        if !point4.isConvexHullNode || point4 == point1 || point4 == point2 || point4 == point3 {
                             continue
                         }
-                        if checkPoint(point1, inTriangle: (point2,point3,point4)) {
-                            points.removeAtIndex(index--)
+                        if checkPoint(point1.position, inTriangle: (point2.position,point3.position,point4.position)) {
+//                            points.removeAtIndex(index--)
+                            point1.isConvexHullNode = false
                             continue pointLoop
                         }
                     }
@@ -53,26 +58,26 @@ class BruteForceCH: NSObject,ConvexHullGenerator {
         var minXPoint = points[0]
         var maxXPoint = points[0]
         for point in points {
-            minXPoint = point.x < minXPoint.x ? point : minXPoint
-            maxXPoint = point.x > maxXPoint.x ? point : maxXPoint
+            minXPoint = point.position.x < minXPoint.position.x ? point : minXPoint
+            maxXPoint = point.position.x > maxXPoint.position.x ? point : maxXPoint
         }
         var su = points.filter {
-            calculatePoint($0, onLine: (minXPoint,maxXPoint)) > 0
+            calculatePoint($0.position, onLine: (minXPoint.position,maxXPoint.position)) > 0
         }
         var sl = points.filter {
-            calculatePoint($0, onLine: (minXPoint,maxXPoint)) < 0
+            calculatePoint($0.position, onLine: (minXPoint.position,maxXPoint.position)) < 0
         }
         su = su.sorted {
-            return ($0 as CGPoint).x > ($1 as CGPoint).x
+            return ($0.position as CGPoint).x > ($1.position as CGPoint).x
         }
         sl = sl.sorted {
-            return ($0 as CGPoint).x < ($1 as CGPoint).x
+            return ($0.position as CGPoint).x < ($1.position as CGPoint).x
         }
         var result = [minXPoint]
         result += sl
         result.append(maxXPoint)
         result += su
-        return result
+        points = result
     }
     
     
