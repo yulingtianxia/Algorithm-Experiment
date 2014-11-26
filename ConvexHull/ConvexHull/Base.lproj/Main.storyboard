@@ -54,6 +54,31 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="算法" id="efR-RV-dnD">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="算法" id="Iqp-1o-DQZ">
+                                    <items>
+                                        <menuItem title="蛮力法" id="Sgj-ms-Mv8">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="selectAlgorithm:" target="Voe-Tx-rLC" id="Mi6-1F-qqV"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="GrahamScan" id="1Tp-2T-AhK">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="selectAlgorithm:" target="Voe-Tx-rLC" id="bjm-Ij-L4f"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="DivideAndConquer" id="fON-sr-Vnv">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="selectAlgorithm:" target="Voe-Tx-rLC" id="FK2-Dv-fwA"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="File" id="dMs-cI-mzQ">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="File" id="bib-Uj-vzu">
@@ -650,8 +675,9 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="凸包" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
                         <rect key="contentRect" x="160" y="74" width="1200" height="800"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>

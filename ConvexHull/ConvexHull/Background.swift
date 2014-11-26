@@ -7,11 +7,26 @@
 //
 
 import Cocoa
+import AppKit
 
-class Background: NSView {
+class Background: NSView, ChooseAlgorithm {
     
     var points:[PointView] = []
-    var generator:ConvexHullGenerator!
+    var generator:ConvexHullGenerator?
+    var algorithmSelected:Algorithm = Algorithm.BruteForceCH {
+        willSet{
+            switch newValue {
+            case .BruteForceCH:
+                generator = BruteForceCH()
+            case .GrahamScan:
+                generator = GrahamScan()
+            case .DivideAndConquer:
+                generator = DivideAndConquer()
+            default:
+                generator = BruteForceCH()
+            }
+        }
+    }
     
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
@@ -41,7 +56,7 @@ class Background: NSView {
     
     override func viewWillMoveToWindow(newWindow: NSWindow?) {
         super.viewWillMoveToWindow(newWindow)
-        generator = BruteForceCH()
+        getAppDelegate().chooseDelegate = self
     }
     
     override func mouseUp(theEvent: NSEvent) {
@@ -55,7 +70,7 @@ class Background: NSView {
     }
     
     func makeConvexHull() {
-        generator.generateConvexHull(&points)
+        generator?.generateConvexHull(&points)
         setNeedsDisplayInRect(frame)
     }
     

@@ -12,17 +12,6 @@ class BruteForceCH: NSObject,ConvexHullGenerator {
     
     func generateConvexHull(inout points:[PointView]){
         
-        func calculatePoint(pointP:CGPoint,onLine line:(pointA:CGPoint,pointB:CGPoint)) -> CGFloat {
-            return (pointP.y - line.pointA.y) * (line.pointB.x - line.pointA.x) - (line.pointB.y - line.pointA.y) * (pointP.x - line.pointA.x)
-        }
-        
-        func checkPoint(P:CGPoint,inTriangle triangle:(A:CGPoint,B:CGPoint,C:CGPoint)) -> Bool {
-            let AB = calculatePoint(P, onLine: (triangle.A,triangle.B)) * calculatePoint(triangle.C, onLine: (triangle.A,triangle.B)) >= 0
-            let AC = calculatePoint(P, onLine: (triangle.A,triangle.C)) * calculatePoint(triangle.B, onLine: (triangle.A,triangle.C)) >= 0
-            let BC = calculatePoint(P, onLine: (triangle.C,triangle.B)) * calculatePoint(triangle.A, onLine: (triangle.C,triangle.B)) >= 0
-            return AB && AC && BC
-        }
-        
         for point in points {
             point.isConvexHullNode = true
         }

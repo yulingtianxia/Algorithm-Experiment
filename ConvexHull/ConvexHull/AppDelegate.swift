@@ -7,11 +7,12 @@
 //
 
 import Cocoa
+import AppKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
+    var chooseDelegate:ChooseAlgorithm?
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
@@ -21,6 +22,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
+    @IBAction func selectAlgorithm(sender: NSMenuItem) {
+        switch sender.title {
+        case "蛮力法":
+            chooseDelegate?.algorithmSelected = .BruteForceCH
+        case "GrahamScan":
+            chooseDelegate?.algorithmSelected = .GrahamScan
+        case "DivideAndConquer":
+            chooseDelegate?.algorithmSelected = .DivideAndConquer
+        default:
+            chooseDelegate?.algorithmSelected = .GrahamScan
+        }
+    }
 
 }
 

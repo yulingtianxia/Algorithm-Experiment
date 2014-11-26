@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A412370B1A24A6F0006FDBB8 /* DivideAndConquer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A412370A1A24A6F0006FDBB8 /* DivideAndConquer.swift */; };
 		A41388BD1A2363EA00B14710 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41388BC1A2363EA00B14710 /* Background.swift */; };
 		A41885EC1A23047300829E0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41885EB1A23047300829E0B /* AppDelegate.swift */; };
 		A41885EE1A23047300829E0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41885ED1A23047300829E0B /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 		A41886091A2304F900829E0B /* BruteForceCH.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41886081A2304F900829E0B /* BruteForceCH.swift */; };
 		A41EF85E1A240D4F0014A61F /* PointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41EF85D1A240D4F0014A61F /* PointView.swift */; };
 		A42800461A241ACF00F28C78 /* HelpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42800451A241ACF00F28C78 /* HelpMethod.swift */; };
+		A42800491A2464F800F28C78 /* GrahamScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42800481A2464F800F28C78 /* GrahamScan.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A412370A1A24A6F0006FDBB8 /* DivideAndConquer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DivideAndConquer.swift; sourceTree = "<group>"; };
 		A41388BC1A2363EA00B14710 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		A41885E61A23047300829E0B /* ConvexHull.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConvexHull.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A41885EA1A23047300829E0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,6 +45,7 @@
 		A41886081A2304F900829E0B /* BruteForceCH.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BruteForceCH.swift; sourceTree = "<group>"; };
 		A41EF85D1A240D4F0014A61F /* PointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointView.swift; sourceTree = "<group>"; };
 		A42800451A241ACF00F28C78 /* HelpMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpMethod.swift; sourceTree = "<group>"; };
+		A42800481A2464F800F28C78 /* GrahamScan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrahamScan.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				A41886081A2304F900829E0B /* BruteForceCH.swift */,
+				A42800481A2464F800F28C78 /* GrahamScan.swift */,
+				A412370A1A24A6F0006FDBB8 /* DivideAndConquer.swift */,
 			);
 			name = Algorithm;
 			sourceTree = "<group>";
@@ -246,9 +252,11 @@
 			files = (
 				A41EF85E1A240D4F0014A61F /* PointView.swift in Sources */,
 				A42800461A241ACF00F28C78 /* HelpMethod.swift in Sources */,
+				A42800491A2464F800F28C78 /* GrahamScan.swift in Sources */,
 				A41885EE1A23047300829E0B /* ViewController.swift in Sources */,
 				A41885EC1A23047300829E0B /* AppDelegate.swift in Sources */,
 				A41886091A2304F900829E0B /* BruteForceCH.swift in Sources */,
+				A412370B1A24A6F0006FDBB8 /* DivideAndConquer.swift in Sources */,
 				A41388BD1A2363EA00B14710 /* Background.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

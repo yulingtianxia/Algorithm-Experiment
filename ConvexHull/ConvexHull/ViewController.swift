@@ -14,8 +14,6 @@ protocol ConvexHullGenerator{
 
 class ViewController: NSViewController {
     
-
-//    var pointViews:[NSView] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,11 +24,7 @@ class ViewController: NSViewController {
         didSet {
         // Update the view, if already loaded.
         }
-    }
-
-    
-    
-    
+    }  
 
 }
 
