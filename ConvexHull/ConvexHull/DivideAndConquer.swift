@@ -70,11 +70,12 @@ class DivideAndConquer: NSObject, ConvexHullGenerator {
         
         var combine = left + right
         let middle = midPoint(left) ?? midPoint(right)
-        
+        //FIXME: combine
         counterclockwiseSort(&combine,middle!)
-        for com in combine {
-            println(com.position)
-        }
+        
+//        for com in combine {
+//            println(com.position)
+//        }
         var stack = [PointView]()
         stack.append(combine[0])
         stack.append(combine[1])
