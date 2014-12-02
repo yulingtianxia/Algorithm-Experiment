@@ -13,9 +13,15 @@ import AppKit
 class DivideAndConquer: NSObject, ConvexHullGenerator {
     
     var restPoints = [PointView]()
-    
+    var beginTime:NSDate!
+    var endTime:NSDate!
+    var costTime:NSTimeInterval {
+        get{
+            return endTime.timeIntervalSinceDate(beginTime)
+        }
+    }
     func Conquer(inout points: [PointView]) {
-        println(points.count)
+//        println(points.count)
         if points.count < 3 {
             return
         }
@@ -52,7 +58,7 @@ class DivideAndConquer: NSObject, ConvexHullGenerator {
         for point in points {
             minXPoint = point.position.x < minXPoint.position.x ? point : minXPoint
             maxXPoint = point.position.x > maxXPoint.position.x ? point : maxXPoint
-            println(point.position)
+//            println(point.position)
         }
         
         let divide = (minXPoint.position.x + maxXPoint.position.x)/2
@@ -121,6 +127,7 @@ class DivideAndConquer: NSObject, ConvexHullGenerator {
     }
     
     func generateConvexHull(inout points: [PointView]) {
+        beginTime = NSDate()
         for point in points {
             point.isConvexHullNode = true
         }
@@ -145,6 +152,6 @@ class DivideAndConquer: NSObject, ConvexHullGenerator {
                 
             }
         }
-        
+        endTime = NSDate()
     }
 }

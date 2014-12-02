@@ -34,6 +34,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             chooseDelegate?.algorithmSelected = .GrahamScan
         }
     }
+    
+    @IBAction func selectPointSum(sender: NSMenuItem) {
+        switch sender.title {
+        case "0":
+            chooseDelegate?.pointNumSelected = 0
+        case "1000":
+            chooseDelegate?.pointNumSelected = 1000
+        case "2000":
+            chooseDelegate?.pointNumSelected = 2000
+        case "3000":
+            chooseDelegate?.pointNumSelected = 3000
+        case let x:
+            if let num = x.toInt() {
+                chooseDelegate?.pointNumSelected = UInt32(num)
+            }
+        default:
+            chooseDelegate?.pointNumSelected = 0
+        }
+    }
+    
 
 }
 

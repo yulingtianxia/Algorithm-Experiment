@@ -11,6 +11,7 @@ import AppKit
 
 protocol ChooseAlgorithm {
     var algorithmSelected:Algorithm {get set}
+    var pointNumSelected:UInt32 {get set}
 }
 
 enum Algorithm {
@@ -28,7 +29,7 @@ func getAppDelegate() -> AppDelegate{
 }
 
 func calculatePoint(pointP:CGPoint,onLine line:(pointA:CGPoint,pointB:CGPoint)) -> CGFloat {
-    println((pointP.y - line.pointA.y) * (line.pointB.x - line.pointA.x) - (line.pointB.y - line.pointA.y) * (pointP.x - line.pointA.x))
+//    println((pointP.y - line.pointA.y) * (line.pointB.x - line.pointA.x) - (line.pointB.y - line.pointA.y) * (pointP.x - line.pointA.x))
     return (pointP.y - line.pointA.y) * (line.pointB.x - line.pointA.x) - (line.pointB.y - line.pointA.y) * (pointP.x - line.pointA.x)
 }
 
@@ -58,3 +59,4 @@ func calculatePolarAngle(origin:CGPoint, target:CGPoint) -> Double{
         return 0
     }
 }
+

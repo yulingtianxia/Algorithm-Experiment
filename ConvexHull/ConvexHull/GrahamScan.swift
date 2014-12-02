@@ -10,7 +10,15 @@ import Cocoa
 import Foundation
 
 class GrahamScan: NSObject,ConvexHullGenerator {
+    var beginTime:NSDate!
+    var endTime:NSDate!
+    var costTime:NSTimeInterval {
+        get{
+            return endTime.timeIntervalSinceDate(beginTime)
+        }
+    }
     func generateConvexHull(inout points: [PointView]) {
+        beginTime = NSDate()
         for point in points {
             point.isConvexHullNode = true
         }
@@ -36,7 +44,7 @@ class GrahamScan: NSObject,ConvexHullGenerator {
             while checkPoint(stack.last!.position, inTriangle: (stack[0].position,stack[stack.count-2].position,point.position)) {
                 stack.last?.isConvexHullNode = false
                 restPoints.append(stack.last!)
-                println(stack.last!)
+//                println(stack.last!)
                 stack.removeLast()
                 if stack.count < 3 {
                     break
@@ -45,6 +53,7 @@ class GrahamScan: NSObject,ConvexHullGenerator {
             stack.append(point)
         }
         points = stack + restPoints
+        endTime = NSDate()
     }
     
 }

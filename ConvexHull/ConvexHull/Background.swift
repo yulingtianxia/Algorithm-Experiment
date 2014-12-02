@@ -11,6 +11,7 @@ import AppKit
 
 class Background: NSView, ChooseAlgorithm {
     
+    @IBOutlet weak var costTimeLabel: NSTextField!
     var points:[PointView] = []
     var generator:ConvexHullGenerator?
     var algorithmSelected:Algorithm = Algorithm.BruteForceCH {
@@ -25,9 +26,16 @@ class Background: NSView, ChooseAlgorithm {
             default:
                 generator = BruteForceCH()
             }
+            makeConvexHull()
         }
     }
-    
+    var pointNumSelected:UInt32 = 0 {
+        willSet{
+            createPointsWithNum(newValue)
+            makeConvexHull()
+        }
+    }
+    var size:CGSize!
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
         if points.isEmpty {
@@ -42,7 +50,9 @@ class Background: NSView, ChooseAlgorithm {
             }
         }
         CGPathAddLines(path, nil, locations, UInt(locations.count))
-        CGPathCloseSubpath(path)
+        if !locations.isEmpty {
+            CGPathCloseSubpath(path)
+        }
         var context = NSGraphicsContext.currentContext()?.CGContext
         CGContextClearRect(context, NSRect(origin: CGPointZero, size: frame.size))
         CGContextAddPath(context, path)
@@ -50,30 +60,58 @@ class Background: NSView, ChooseAlgorithm {
         CGContextSetLineWidth(context, 5.0)
         NSColor.redColor().setStroke()
         CGContextDrawPath(context, kCGPathStroke)
-
+        
         
     }
     
     override func viewWillMoveToWindow(newWindow: NSWindow?) {
         super.viewWillMoveToWindow(newWindow)
+        size = newWindow?.frame.size
+//        generator = BruteForceCH()
         getAppDelegate().chooseDelegate = self
     }
     
     override func mouseUp(theEvent: NSEvent) {
         if theEvent.clickCount > 1 {
             let location = convertPoint(theEvent.locationInWindow, fromView: nil)
-            let pointView = PointView(location: location)
-            points.append(pointView)
-            addSubview(pointView)
+            addPont(location)
             makeConvexHull()
         }
     }
     
+    func addPont(location:CGPoint) {
+        let pointView = PointView(location: location)
+        points.append(pointView)
+        addSubview(pointView)
+    }
+    
+    func clearPoints() {
+        for point in points {
+            point.removeFromSuperview()
+        }
+        points.removeAll(keepCapacity: false)
+    }
+    
     func makeConvexHull() {
         generator?.generateConvexHull(&points)
+        if let cost = generator?.costTime {
+            (costTimeLabel.cell() as NSTextFieldCell).title = "\(cost*1000)"
+        }
+        else{
+            (costTimeLabel.cell() as NSTextFieldCell).title = "no"
+        }
         setNeedsDisplayInRect(frame)
     }
     
+    
+    func createPointsWithNum(num:UInt32) {
+        clearPoints()
+        for _ in 0..<num {
+            let x = CGFloat(arc4random_uniform(UInt32(size.width)))
+            let y = CGFloat(arc4random_uniform(UInt32(size.height)))
+            addPont(CGPoint(x: x, y: y))
+        }
+    }
     
     
 }

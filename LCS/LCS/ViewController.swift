@@ -1,25 +1,17 @@
 //
 //  ViewController.swift
-//  ConvexHull
+//  LCS
 //
-//  Created by 杨萧玉 on 14/11/24.
+//  Created by 杨萧玉 on 14/12/2.
 //  Copyright (c) 2014年 杨萧玉. All rights reserved.
 //
 
 import Cocoa
 
-protocol ConvexHullGenerator{
-    var beginTime:NSDate!{get set}
-    var endTime:NSDate!{get set}
-    var costTime:NSTimeInterval{get}
-    func generateConvexHull(inout points:[PointView])
-}
-
 class ViewController: NSViewController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
 
@@ -27,7 +19,8 @@ class ViewController: NSViewController {
         didSet {
         // Update the view, if already loaded.
         }
-    }  
+    }
+
 
 }
 

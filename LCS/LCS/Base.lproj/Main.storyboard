@@ -10,11 +10,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="ConvexHull" id="1Xt-HY-uBw">
+                            <menuItem title="LCS" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="ConvexHull" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="LCS" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About ConvexHull" id="5kV-Vb-QxS">
+                                        <menuItem title="About LCS" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -28,7 +28,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide ConvexHull" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide LCS" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -46,89 +46,9 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit ConvexHull" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit LCS" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
-                                            </connections>
-                                        </menuItem>
-                                    </items>
-                                </menu>
-                            </menuItem>
-                            <menuItem title="算法" id="efR-RV-dnD">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="算法" id="Iqp-1o-DQZ">
-                                    <items>
-                                        <menuItem title="蛮力法" id="Sgj-ms-Mv8">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="selectAlgorithm:" target="Voe-Tx-rLC" id="Mi6-1F-qqV"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="GrahamScan" id="1Tp-2T-AhK">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="selectAlgorithm:" target="Voe-Tx-rLC" id="bjm-Ij-L4f"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="DivideAndConquer" id="fON-sr-Vnv">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="selectAlgorithm:" target="Voe-Tx-rLC" id="FK2-Dv-fwA"/>
-                                            </connections>
-                                        </menuItem>
-                                    </items>
-                                </menu>
-                            </menuItem>
-                            <menuItem title="规模" id="Jbu-lV-0tK">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="规模" id="Coc-wx-ddw">
-                                    <items>
-                                        <menuItem title="0" id="Kzy-eT-XHj">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="selectPointSum:" target="Voe-Tx-rLC" id="qup-D8-BDj"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="50" id="Tt5-Gc-Fy4">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="selectPointSum:" target="Voe-Tx-rLC" id="rfb-1P-cVv"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="100" id="iEg-yL-gtE">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="selectPointSum:" target="Voe-Tx-rLC" id="q9l-a5-sCE"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="200" id="2iY-TU-FMC">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="selectPointSum:" target="Voe-Tx-rLC" id="TUO-Og-9Gr"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="500" id="bpy-bM-eOG">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="selectPointSum:" target="Voe-Tx-rLC" id="NFj-4K-cca"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="1000" id="2NS-8l-YeW">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="selectPointSum:" target="Voe-Tx-rLC" id="dOx-7P-ChJ"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="2000" id="FOD-MZ-yYf">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="selectPointSum:" target="Voe-Tx-rLC" id="5JU-1q-S4v"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="3000" id="kmJ-hp-xjj">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="selectPointSum:" target="Voe-Tx-rLC" id="TbH-gT-46P"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -707,7 +627,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="ConvexHull Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="LCS Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -721,19 +641,20 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="ConvexHull" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="LCS" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26.5" y="-295"/>
+            <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="凸包" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="LCS" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
-                        <rect key="contentRect" x="160" y="74" width="1200" height="800"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
                     <connections>
@@ -747,28 +668,129 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="ConvexHull" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" alphaValue="0.5" id="m2S-Jp-Qdl" customClass="Background" customModule="ConvexHull" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="1200" height="800"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="LCS" customModuleProvider="target" sceneMemberID="viewController">
+                    <visualEffectView key="view" appearanceType="vibrantDark" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" id="03n-nM-x6h">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="302"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4z3-8X-7r1">
-                                <rect key="frame" x="1044" y="756" width="138" height="24"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="0" id="5Y8-kd-AJL">
-                                    <font key="font" metaFont="system" size="20"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
+                            <view wantsLayer="YES" alphaValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="m2S-Jp-Qdl" customClass="Background" customModule="LCS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="302"/>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="g8R-QD-7v8">
+                                        <rect key="frame" x="100" y="202" width="250" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="3rd-QU-1pX"/>
+                                            <constraint firstAttribute="height" constant="22" id="PaN-gZ-We6"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="4cG-vq-0XN">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <outlet property="delegate" destination="m2S-Jp-Qdl" id="pYU-eL-qSf"/>
+                                        </connections>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tly-ib-Nor">
+                                        <rect key="frame" x="100" y="140" width="250" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="T1Q-aM-JaW"/>
+                                            <constraint firstAttribute="height" constant="22" id="vy5-2z-4f9"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="eXM-4o-bSO">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <outlet property="delegate" destination="m2S-Jp-Qdl" id="Crn-D0-By3"/>
+                                        </connections>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vx4-AW-zJY">
+                                        <rect key="frame" x="98" y="78" width="254" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="ddu-OB-GLa"/>
+                                            <constraint firstAttribute="height" constant="22" id="int-qy-spd"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="此处无声胜有声" placeholderString="还未找到LCS" id="97C-6B-eoP">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QUc-8t-hqL">
+                                        <rect key="frame" x="135" y="20" width="180" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="KeN-v8-dHo"/>
+                                            <constraint firstAttribute="width" constant="180" id="mTB-G3-7Js"/>
+                                        </constraints>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        <size key="cellSize" width="74" height="18"/>
+                                        <size key="intercellSpacing" width="4" height="2"/>
+                                        <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="hxV-U9-IUg">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <cells>
+                                            <column>
+                                                <buttonCell type="radio" title="分治技术" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="b9U-73-0Ww">
+                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                    <connections>
+                                                        <action selector="radioButtonclicked" target="m2S-Jp-Qdl" id="7Tg-CM-Iqy"/>
+                                                    </connections>
+                                                </buttonCell>
+                                            </column>
+                                            <column>
+                                                <buttonCell type="radio" title="动态规划" imagePosition="left" alignment="left" inset="2" id="Myq-Ha-EiB">
+                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                    <connections>
+                                                        <action selector="radioButtonclicked" target="m2S-Jp-Qdl" id="xSa-BB-YaD"/>
+                                                    </connections>
+                                                </buttonCell>
+                                            </column>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="delegate" destination="m2S-Jp-Qdl" id="hUh-fN-5Vc"/>
+                                        </connections>
+                                    </matrix>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="tly-ib-Nor" secondAttribute="centerX" id="BMs-RS-4T4"/>
+                                    <constraint firstAttribute="centerX" secondItem="QUc-8t-hqL" secondAttribute="centerX" id="Kuo-89-Vl8"/>
+                                    <constraint firstAttribute="bottom" secondItem="QUc-8t-hqL" secondAttribute="bottom" constant="20" id="SZB-eI-qYx"/>
+                                    <constraint firstAttribute="centerX" secondItem="tly-ib-Nor" secondAttribute="centerX" id="WrV-eO-URV"/>
+                                    <constraint firstItem="vx4-AW-zJY" firstAttribute="top" secondItem="tly-ib-Nor" secondAttribute="bottom" constant="40" id="XCm-qa-wsx"/>
+                                    <constraint firstAttribute="centerY" secondItem="tly-ib-Nor" secondAttribute="centerY" id="aNd-W8-pqT"/>
+                                    <constraint firstAttribute="centerX" secondItem="g8R-QD-7v8" secondAttribute="centerX" id="dim-Wg-qTL"/>
+                                    <constraint firstAttribute="centerX" secondItem="vx4-AW-zJY" secondAttribute="centerX" id="fXp-ev-4CG"/>
+                                    <constraint firstItem="tly-ib-Nor" firstAttribute="top" secondItem="g8R-QD-7v8" secondAttribute="bottom" constant="40" id="qPW-o5-wYN"/>
+                                    <constraint firstAttribute="centerX" secondItem="g8R-QD-7v8" secondAttribute="centerX" id="uki-YM-g3A"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="vx4-AW-zJY" secondAttribute="bottom" constant="50" id="wR5-sg-5gH"/>
+                                    <constraint firstItem="g8R-QD-7v8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="70" id="xYJ-dX-4qc"/>
+                                </constraints>
+                                <shadow key="shadow">
+                                    <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </shadow>
+                                <connections>
+                                    <outlet property="result" destination="vx4-AW-zJY" id="Tho-0u-UkL"/>
+                                    <outlet property="sequenceA" destination="g8R-QD-7v8" id="Efe-4S-WQ4"/>
+                                    <outlet property="sequenceB" destination="tly-ib-Nor" id="mPb-Gw-7YM"/>
+                                </connections>
+                            </view>
                         </subviews>
-                        <connections>
-                            <outlet property="costTimeLabel" destination="4z3-8X-7r1" id="ijk-me-bsm"/>
-                        </connections>
-                    </view>
+                        <constraints>
+                            <constraint firstItem="m2S-Jp-Qdl" firstAttribute="leading" secondItem="03n-nM-x6h" secondAttribute="leading" id="DQd-dZ-L8Y"/>
+                            <constraint firstItem="m2S-Jp-Qdl" firstAttribute="top" secondItem="03n-nM-x6h" secondAttribute="top" id="HEQ-PA-EtE"/>
+                            <constraint firstAttribute="bottom" secondItem="m2S-Jp-Qdl" secondAttribute="bottom" id="T9D-de-f8f"/>
+                            <constraint firstAttribute="trailing" secondItem="m2S-Jp-Qdl" secondAttribute="trailing" id="yPu-CD-kgr"/>
+                        </constraints>
+                    </visualEffectView>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="1300"/>
+            <point key="canvasLocation" x="75" y="655"/>
         </scene>
     </scenes>
 </document>
