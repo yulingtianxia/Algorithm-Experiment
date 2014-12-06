@@ -13,8 +13,8 @@ import AppKit
 class DivideAndConquer: NSObject, ConvexHullGenerator {
     
     var restPoints = [PointView]()
-    var beginTime:NSDate!
-    var endTime:NSDate!
+    var beginTime = NSDate(timeIntervalSince1970: 0)
+    var endTime = NSDate(timeIntervalSince1970: 0)
     var costTime:NSTimeInterval {
         get{
             return endTime.timeIntervalSinceDate(beginTime)

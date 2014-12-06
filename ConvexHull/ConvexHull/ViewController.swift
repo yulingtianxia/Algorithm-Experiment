@@ -9,8 +9,8 @@
 import Cocoa
 
 protocol ConvexHullGenerator{
-    var beginTime:NSDate!{get set}
-    var endTime:NSDate!{get set}
+    var beginTime:NSDate{get set}
+    var endTime:NSDate{get set}
     var costTime:NSTimeInterval{get}
     func generateConvexHull(inout points:[PointView])
 }
