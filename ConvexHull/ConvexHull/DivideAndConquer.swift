@@ -70,9 +70,12 @@ class DivideAndConquer: NSObject, ConvexHullGenerator {
         var right = points.filter {
             return $0.position.x > divide
         }
-        
-        Conquer(&left)
-        Conquer(&right)
+        if left.count>0 {
+            Conquer(&left)
+        }
+        if right.count>0 {
+            Conquer(&right)
+        }
         
         var combine = left + right
         let middle = midPoint(left) ?? midPoint(right)

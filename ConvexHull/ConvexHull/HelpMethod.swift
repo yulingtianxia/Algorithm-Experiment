@@ -34,12 +34,19 @@ func calculatePoint(pointP:CGPoint,onLine line:(pointA:CGPoint,pointB:CGPoint)) 
 }
 
 func checkPoint(P:CGPoint,inTriangle triangle:(A:CGPoint,B:CGPoint,C:CGPoint)) -> Bool {
-    let AB = calculatePoint(P, onLine: (triangle.A,triangle.B)) == 0||calculatePoint(P, onLine: (triangle.A,triangle.B)) * calculatePoint(triangle.C, onLine: (triangle.A,triangle.B)) > 0
-    let AC = calculatePoint(P, onLine: (triangle.A,triangle.C)) == 0||calculatePoint(P, onLine: (triangle.A,triangle.C)) * calculatePoint(triangle.B, onLine: (triangle.A,triangle.C)) > 0
-    let BC = calculatePoint(P, onLine: (triangle.C,triangle.B)) == 0||calculatePoint(P, onLine: (triangle.C,triangle.B)) * calculatePoint(triangle.A, onLine: (triangle.C,triangle.B)) > 0
-//    println("AB:\(AB)")
-//    println("AC:\(AC)")
-//    println("BC:\(BC)")
+    var Pp = calculatePoint(P, onLine: (triangle.A,triangle.B))
+    let AB = Pp == 0||Pp * calculatePoint(triangle.C, onLine: (triangle.A,triangle.B)) > 0
+    if !AB{
+        return AB
+    }
+    Pp = calculatePoint(P, onLine: (triangle.A,triangle.C))
+    let AC = Pp == 0||Pp * calculatePoint(triangle.B, onLine: (triangle.A,triangle.C)) > 0
+    if !AC{
+        return AC
+    }
+    Pp = calculatePoint(P, onLine: (triangle.C,triangle.B))
+    let BC = Pp == 0||Pp * calculatePoint(triangle.A, onLine: (triangle.C,triangle.B)) > 0
+
     return AB && AC && BC
 }
 

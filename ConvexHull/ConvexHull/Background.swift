@@ -107,8 +107,8 @@ class Background: NSView, ChooseAlgorithm {
     func createPointsWithNum(num:UInt32) {
         clearPoints()
         for _ in 0..<num {
-            let x = CGFloat(arc4random_uniform(UInt32(size.width)))
-            let y = CGFloat(arc4random_uniform(UInt32(size.height)))
+            let x = CGFloat(powf(Float(arc4random_uniform(UInt32(pow(size.width,2)))), 0.5))
+            let y = CGFloat(powf(Float(arc4random_uniform(UInt32(pow(size.height,2)))), 0.5))
             addPont(CGPoint(x: x, y: y))
         }
     }
