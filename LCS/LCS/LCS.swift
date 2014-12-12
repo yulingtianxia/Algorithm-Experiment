@@ -13,6 +13,7 @@ class LCS: NSObject {
     var C = [[Int]]()
     var B = [[Int]]()
     var result:String = ""
+    
     func calculateLCS(x:String,y:String) -> String{
         result = ""
         let m = countElements(x)

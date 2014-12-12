@@ -1,0 +1,454 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A40E7B0F1A3B1BC30095A1A6 /* BaseTreeSearching.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40E7B0E1A3B1BC30095A1A6 /* BaseTreeSearching.swift */; };
+		A4FAC67A1A3ACF0400895556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAC6791A3ACF0400895556 /* AppDelegate.swift */; };
+		A4FAC67C1A3ACF0400895556 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAC67B1A3ACF0400895556 /* ViewController.swift */; };
+		A4FAC67E1A3ACF0400895556 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4FAC67D1A3ACF0400895556 /* Images.xcassets */; };
+		A4FAC6811A3ACF0400895556 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4FAC67F1A3ACF0400895556 /* Main.storyboard */; };
+		A4FAC68D1A3ACF0400895556 /* HamiltonianTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAC68C1A3ACF0400895556 /* HamiltonianTests.swift */; };
+		A4FAC6981A3AD0E600895556 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAC6971A3AD0E600895556 /* Background.swift */; };
+		A4FAC69A1A3AD10A00895556 /* PointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAC6991A3AD10A00895556 /* PointView.swift */; };
+		A4FAC69E1A3AD1C200895556 /* HelpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAC69D1A3AD1C200895556 /* HelpMethod.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A4FAC6871A3ACF0400895556 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4FAC66C1A3ACF0400895556 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4FAC6731A3ACF0400895556;
+			remoteInfo = Hamiltonian;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A40E7B0E1A3B1BC30095A1A6 /* BaseTreeSearching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTreeSearching.swift; sourceTree = "<group>"; };
+		A4FAC6741A3ACF0400895556 /* Hamiltonian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hamiltonian.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4FAC6781A3ACF0400895556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4FAC6791A3ACF0400895556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A4FAC67B1A3ACF0400895556 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A4FAC67D1A3ACF0400895556 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A4FAC6801A3ACF0400895556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A4FAC6861A3ACF0400895556 /* HamiltonianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HamiltonianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4FAC68B1A3ACF0400895556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4FAC68C1A3ACF0400895556 /* HamiltonianTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamiltonianTests.swift; sourceTree = "<group>"; };
+		A4FAC6971A3AD0E600895556 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		A4FAC6991A3AD10A00895556 /* PointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointView.swift; sourceTree = "<group>"; };
+		A4FAC69D1A3AD1C200895556 /* HelpMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpMethod.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A4FAC6711A3ACF0400895556 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4FAC6831A3ACF0400895556 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A4FAC66B1A3ACF0400895556 = {
+			isa = PBXGroup;
+			children = (
+				A4FAC6761A3ACF0400895556 /* Hamiltonian */,
+				A4FAC6891A3ACF0400895556 /* HamiltonianTests */,
+				A4FAC6751A3ACF0400895556 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A4FAC6751A3ACF0400895556 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A4FAC6741A3ACF0400895556 /* Hamiltonian.app */,
+				A4FAC6861A3ACF0400895556 /* HamiltonianTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A4FAC6761A3ACF0400895556 /* Hamiltonian */ = {
+			isa = PBXGroup;
+			children = (
+				A4FAC69C1A3AD15700895556 /* Utils */,
+				A4FAC69B1A3AD14200895556 /* Algorithm */,
+				A4FAC6961A3AD0B600895556 /* Views */,
+				A4FAC6791A3ACF0400895556 /* AppDelegate.swift */,
+				A4FAC67B1A3ACF0400895556 /* ViewController.swift */,
+				A4FAC67D1A3ACF0400895556 /* Images.xcassets */,
+				A4FAC67F1A3ACF0400895556 /* Main.storyboard */,
+				A4FAC6771A3ACF0400895556 /* Supporting Files */,
+			);
+			path = Hamiltonian;
+			sourceTree = "<group>";
+		};
+		A4FAC6771A3ACF0400895556 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A4FAC6781A3ACF0400895556 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A4FAC6891A3ACF0400895556 /* HamiltonianTests */ = {
+			isa = PBXGroup;
+			children = (
+				A4FAC68C1A3ACF0400895556 /* HamiltonianTests.swift */,
+				A4FAC68A1A3ACF0400895556 /* Supporting Files */,
+			);
+			path = HamiltonianTests;
+			sourceTree = "<group>";
+		};
+		A4FAC68A1A3ACF0400895556 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A4FAC68B1A3ACF0400895556 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A4FAC6961A3AD0B600895556 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A4FAC6971A3AD0E600895556 /* Background.swift */,
+				A4FAC6991A3AD10A00895556 /* PointView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		A4FAC69B1A3AD14200895556 /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				A40E7B0E1A3B1BC30095A1A6 /* BaseTreeSearching.swift */,
+			);
+			name = Algorithm;
+			sourceTree = "<group>";
+		};
+		A4FAC69C1A3AD15700895556 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A4FAC69D1A3AD1C200895556 /* HelpMethod.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A4FAC6731A3ACF0400895556 /* Hamiltonian */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4FAC6901A3ACF0400895556 /* Build configuration list for PBXNativeTarget "Hamiltonian" */;
+			buildPhases = (
+				A4FAC6701A3ACF0400895556 /* Sources */,
+				A4FAC6711A3ACF0400895556 /* Frameworks */,
+				A4FAC6721A3ACF0400895556 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hamiltonian;
+			productName = Hamiltonian;
+			productReference = A4FAC6741A3ACF0400895556 /* Hamiltonian.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A4FAC6851A3ACF0400895556 /* HamiltonianTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4FAC6931A3ACF0400895556 /* Build configuration list for PBXNativeTarget "HamiltonianTests" */;
+			buildPhases = (
+				A4FAC6821A3ACF0400895556 /* Sources */,
+				A4FAC6831A3ACF0400895556 /* Frameworks */,
+				A4FAC6841A3ACF0400895556 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A4FAC6881A3ACF0400895556 /* PBXTargetDependency */,
+			);
+			name = HamiltonianTests;
+			productName = HamiltonianTests;
+			productReference = A4FAC6861A3ACF0400895556 /* HamiltonianTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A4FAC66C1A3ACF0400895556 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "杨萧玉";
+				TargetAttributes = {
+					A4FAC6731A3ACF0400895556 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					A4FAC6851A3ACF0400895556 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = A4FAC6731A3ACF0400895556;
+					};
+				};
+			};
+			buildConfigurationList = A4FAC66F1A3ACF0400895556 /* Build configuration list for PBXProject "Hamiltonian" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A4FAC66B1A3ACF0400895556;
+			productRefGroup = A4FAC6751A3ACF0400895556 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A4FAC6731A3ACF0400895556 /* Hamiltonian */,
+				A4FAC6851A3ACF0400895556 /* HamiltonianTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A4FAC6721A3ACF0400895556 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4FAC67E1A3ACF0400895556 /* Images.xcassets in Resources */,
+				A4FAC6811A3ACF0400895556 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4FAC6841A3ACF0400895556 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A4FAC6701A3ACF0400895556 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4FAC67C1A3ACF0400895556 /* ViewController.swift in Sources */,
+				A4FAC67A1A3ACF0400895556 /* AppDelegate.swift in Sources */,
+				A4FAC6981A3AD0E600895556 /* Background.swift in Sources */,
+				A40E7B0F1A3B1BC30095A1A6 /* BaseTreeSearching.swift in Sources */,
+				A4FAC69E1A3AD1C200895556 /* HelpMethod.swift in Sources */,
+				A4FAC69A1A3AD10A00895556 /* PointView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4FAC6821A3ACF0400895556 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4FAC68D1A3ACF0400895556 /* HamiltonianTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A4FAC6881A3ACF0400895556 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4FAC6731A3ACF0400895556 /* Hamiltonian */;
+			targetProxy = A4FAC6871A3ACF0400895556 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A4FAC67F1A3ACF0400895556 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4FAC6801A3ACF0400895556 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A4FAC68E1A3ACF0400895556 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A4FAC68F1A3ACF0400895556 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A4FAC6911A3ACF0400895556 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Hamiltonian/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A4FAC6921A3ACF0400895556 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Hamiltonian/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A4FAC6941A3ACF0400895556 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HamiltonianTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hamiltonian.app/Contents/MacOS/Hamiltonian";
+			};
+			name = Debug;
+		};
+		A4FAC6951A3ACF0400895556 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HamiltonianTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hamiltonian.app/Contents/MacOS/Hamiltonian";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A4FAC66F1A3ACF0400895556 /* Build configuration list for PBXProject "Hamiltonian" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4FAC68E1A3ACF0400895556 /* Debug */,
+				A4FAC68F1A3ACF0400895556 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4FAC6901A3ACF0400895556 /* Build configuration list for PBXNativeTarget "Hamiltonian" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4FAC6911A3ACF0400895556 /* Debug */,
+				A4FAC6921A3ACF0400895556 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4FAC6931A3ACF0400895556 /* Build configuration list for PBXNativeTarget "HamiltonianTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4FAC6941A3ACF0400895556 /* Debug */,
+				A4FAC6951A3ACF0400895556 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A4FAC66C1A3ACF0400895556 /* Project object */;
+}

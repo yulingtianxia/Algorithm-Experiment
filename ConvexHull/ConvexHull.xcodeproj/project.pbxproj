@@ -87,7 +87,7 @@
 		A41885E81A23047300829E0B /* ConvexHull */ = {
 			isa = PBXGroup;
 			children = (
-				A42800471A241AD600F28C78 /* Uitils */,
+				A42800471A241AD600F28C78 /* Utils */,
 				A41EF8601A240D6A0014A61F /* Algorithm */,
 				A41EF85F1A240D590014A61F /* Views */,
 				A41885EB1A23047300829E0B /* AppDelegate.swift */,
@@ -143,12 +143,12 @@
 			name = Algorithm;
 			sourceTree = "<group>";
 		};
-		A42800471A241AD600F28C78 /* Uitils */ = {
+		A42800471A241AD600F28C78 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				A42800451A241ACF00F28C78 /* HelpMethod.swift */,
 			);
-			name = Uitils;
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

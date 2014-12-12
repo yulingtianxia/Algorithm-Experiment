@@ -16,9 +16,17 @@ class Background: NSView,NSTextFieldDelegate,NSMatrixDelegate {
     
     @IBOutlet weak var result: NSTextField!
     
+    @IBOutlet weak var timeCost:NSTextField!
     
     var mode = 0;
     var lcs = LCS()
+    var beginTime = NSDate(timeIntervalSince1970: 0)
+    var endTime = NSDate(timeIntervalSince1970: 0)
+    var costTime:NSTimeInterval {
+        get{
+            return endTime.timeIntervalSinceDate(beginTime)*1000
+        }
+    }
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
 
@@ -26,6 +34,7 @@ class Background: NSView,NSTextFieldDelegate,NSMatrixDelegate {
     }
     
     override func controlTextDidChange(obj: NSNotification) {
+        beginTime = NSDate();
         switch mode{
         case 0:
             result.stringValue = lcs.simpleLCS(sequenceA.stringValue, y: sequenceB.stringValue)
@@ -34,7 +43,8 @@ class Background: NSView,NSTextFieldDelegate,NSMatrixDelegate {
         default:
             result.stringValue = lcs.simpleLCS(sequenceA.stringValue, y: sequenceB.stringValue)
         }
-        
+        endTime = NSDate();
+        timeCost.stringValue = costTime.description
     }
     
     @IBAction func radioButtonclicked(sender:NSMatrix){
