@@ -22,5 +22,6 @@ protocol ChooseAlgorithm {
 enum Algorithm {
     case BaseTreeSearch
     case HillClimbing
+    case MySearch
 }
 

@@ -650,10 +650,10 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="哈密顿环" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                    <window key="window" title="哈密顿环问题" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
                         <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
-                        <rect key="contentRect" x="561" y="310" width="480" height="270"/>
+                        <rect key="contentRect" x="0.0" y="227" width="800" height="600"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <value key="minSize" type="size" width="480" height="270"/>
                     </window>
@@ -669,85 +669,80 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Hamiltonian" customModuleProvider="target" sceneMemberID="viewController">
-                    <visualEffectView key="view" appearanceType="vibrantDark" blendingMode="behindWindow" material="dark" state="active" id="6VN-Vu-rnK">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <visualEffectView key="view" appearanceType="vibrantDark" blendingMode="behindWindow" material="dark" state="active" id="ZnB-0d-0vR">
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alphaValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dya-RG-Fyo" customClass="Background" customModule="Hamiltonian" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                            <customView autoresizesSubviews="NO" wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3DX-iJ-8re" customClass="Background" customModule="Hamiltonian" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                                 <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YeX-Cv-5B2">
-                                        <rect key="frame" x="372" y="263" width="60" height="17"/>
-                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="运行时间" placeholderString="0" usesSingleLineMode="YES" id="Q6E-Cp-G20">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5EC-bO-Bch">
+                                        <rect key="frame" x="372" y="563" width="56" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="运行时间" placeholderString="0" id="h4F-GL-bbt">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AMd-ha-cDJ">
-                                        <rect key="frame" x="135" y="20" width="180" height="18"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="180" id="1wS-Wq-rdk"/>
-                                            <constraint firstAttribute="height" constant="18" id="I8I-Ue-UJN"/>
-                                        </constraints>
+                                    <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DOj-mG-gaC">
+                                        <rect key="frame" x="285" y="30" width="230" height="18"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        <size key="cellSize" width="100" height="18"/>
+                                        <size key="cellSize" width="74" height="18"/>
                                         <size key="intercellSpacing" width="4" height="2"/>
-                                        <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="DI3-S4-dfe">
+                                        <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="RBN-Bi-0vS">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <cells>
                                             <column>
-                                                <buttonCell type="radio" title="基本搜索算法" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="zta-hU-05h">
+                                                <buttonCell type="radio" title="基本搜索" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="6T0-ci-T0D">
                                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                     <font key="font" metaFont="system"/>
-                                                    <connections>
-                                                        <action selector="radioButtonclicked" target="dya-RG-Fyo" id="Pbh-WV-PkK"/>
-                                                    </connections>
                                                 </buttonCell>
                                             </column>
                                             <column>
-                                                <buttonCell type="radio" title="爬山法" imagePosition="left" alignment="left" inset="2" id="xew-ad-eg6">
+                                                <buttonCell type="radio" title="爬山法" imagePosition="left" alignment="left" inset="2" id="FwG-9g-eld">
                                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                     <font key="font" metaFont="system"/>
-                                                    <connections>
-                                                        <action selector="radioButtonclicked" target="dya-RG-Fyo" id="wd0-CL-NI5"/>
-                                                    </connections>
+                                                </buttonCell>
+                                            </column>
+                                            <column>
+                                                <buttonCell type="radio" title="个性优化" imagePosition="left" alignment="left" inset="2" id="1WZ-nF-94b">
+                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="system"/>
                                                 </buttonCell>
                                             </column>
                                         </cells>
                                         <connections>
-                                            <action selector="radioButtonclicked:" target="dya-RG-Fyo" id="4Cb-Ex-rFv"/>
-                                            <outlet property="delegate" destination="dya-RG-Fyo" id="qTw-D1-qNU"/>
+                                            <action selector="radioButtonclicked:" target="3DX-iJ-8re" id="DSe-li-fkL"/>
                                         </connections>
                                     </matrix>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="AMd-ha-cDJ" secondAttribute="bottom" constant="20" id="7FP-G3-F53"/>
-                                    <constraint firstAttribute="centerX" secondItem="AMd-ha-cDJ" secondAttribute="centerX" id="Wul-tW-mnl"/>
-                                    <constraint firstItem="YeX-Cv-5B2" firstAttribute="top" secondItem="dya-RG-Fyo" secondAttribute="top" constant="20" id="g3t-b2-4QM"/>
-                                    <constraint firstAttribute="trailing" secondItem="YeX-Cv-5B2" secondAttribute="trailing" constant="20" id="vIs-ug-CfX"/>
+                                    <constraint firstAttribute="bottom" secondItem="DOj-mG-gaC" secondAttribute="bottom" constant="30" id="9zw-QA-vAj"/>
+                                    <constraint firstAttribute="centerX" secondItem="5EC-bO-Bch" secondAttribute="centerX" id="Ms2-rR-tJw"/>
+                                    <constraint firstItem="5EC-bO-Bch" firstAttribute="top" secondItem="3DX-iJ-8re" secondAttribute="top" constant="20" id="SBY-lz-6qy"/>
+                                    <constraint firstAttribute="centerX" secondItem="DOj-mG-gaC" secondAttribute="centerX" id="uOR-wz-Qn2"/>
                                 </constraints>
                                 <shadow key="shadow">
                                     <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </shadow>
                                 <connections>
-                                    <outlet property="costTimeLabel" destination="YeX-Cv-5B2" id="4hv-Hg-yO8"/>
+                                    <outlet property="costTimeLabel" destination="5EC-bO-Bch" id="V5M-Pv-sBi"/>
                                 </connections>
-                            </view>
+                            </customView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="dya-RG-Fyo" firstAttribute="top" secondItem="6VN-Vu-rnK" secondAttribute="top" id="8TE-NV-mMW"/>
-                            <constraint firstItem="dya-RG-Fyo" firstAttribute="leading" secondItem="6VN-Vu-rnK" secondAttribute="leading" id="BJl-NQ-abE"/>
-                            <constraint firstAttribute="trailing" secondItem="dya-RG-Fyo" secondAttribute="trailing" id="Gk4-nT-qAg"/>
-                            <constraint firstAttribute="bottom" secondItem="dya-RG-Fyo" secondAttribute="bottom" id="OKp-yq-KUV"/>
+                            <constraint firstItem="3DX-iJ-8re" firstAttribute="top" secondItem="ZnB-0d-0vR" secondAttribute="top" id="Uaq-PN-O6n"/>
+                            <constraint firstAttribute="trailing" secondItem="3DX-iJ-8re" secondAttribute="trailing" id="hUv-0k-1VQ"/>
+                            <constraint firstAttribute="bottom" secondItem="3DX-iJ-8re" secondAttribute="bottom" id="rjz-QC-SO6"/>
+                            <constraint firstItem="3DX-iJ-8re" firstAttribute="leading" secondItem="ZnB-0d-0vR" secondAttribute="leading" id="w97-Qk-4Sa"/>
                         </constraints>
                     </visualEffectView>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="740"/>
+            <point key="canvasLocation" x="75" y="1033"/>
         </scene>
     </scenes>
 </document>

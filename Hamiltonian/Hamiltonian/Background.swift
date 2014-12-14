@@ -22,6 +22,8 @@ class Background: NSView, ChooseAlgorithm {
                 generator = BaseTreeSearching()
             case .HillClimbing:
                 generator = BaseTreeSearching()
+            case .MySearch:
+                generator = MySearching()
             default:
                 generator = BaseTreeSearching()
             }
@@ -76,6 +78,7 @@ class Background: NSView, ChooseAlgorithm {
         CGContextClearRect(context, NSRect(origin: CGPointZero, size: frame.size))
         CGContextAddPath(context, path)
         CGContextSetLineJoin(context, kCGLineJoinRound)
+        CGContextSetLineCap(context, kCGLineCapRound)
         CGContextSetLineWidth(context, 5.0)
         NSColor.redColor().setStroke()
         CGContextDrawPath(context, kCGPathStroke)
@@ -147,10 +150,12 @@ class Background: NSView, ChooseAlgorithm {
     
     @IBAction func radioButtonclicked(sender:NSMatrix){
         switch (sender.selectedCell() as NSButtonCell).title {
-        case "基本搜索算法":
+        case "基本搜索":
             algorithmSelected = Algorithm.BaseTreeSearch
         case "爬山法":
             algorithmSelected = Algorithm.HillClimbing
+        case "个性优化":
+            algorithmSelected = Algorithm.MySearch
         default:
             algorithmSelected = Algorithm.BaseTreeSearch
         }

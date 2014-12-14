@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A40E7B0F1A3B1BC30095A1A6 /* BaseTreeSearching.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40E7B0E1A3B1BC30095A1A6 /* BaseTreeSearching.swift */; };
+		A48D84C51A3D45F600BB5B55 /* MySearching.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48D84C41A3D45F600BB5B55 /* MySearching.swift */; };
 		A4FAC67A1A3ACF0400895556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAC6791A3ACF0400895556 /* AppDelegate.swift */; };
 		A4FAC67C1A3ACF0400895556 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAC67B1A3ACF0400895556 /* ViewController.swift */; };
 		A4FAC67E1A3ACF0400895556 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4FAC67D1A3ACF0400895556 /* Images.xcassets */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		A40E7B0E1A3B1BC30095A1A6 /* BaseTreeSearching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTreeSearching.swift; sourceTree = "<group>"; };
+		A48D84C41A3D45F600BB5B55 /* MySearching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySearching.swift; sourceTree = "<group>"; };
 		A4FAC6741A3ACF0400895556 /* Hamiltonian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hamiltonian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4FAC6781A3ACF0400895556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4FAC6791A3ACF0400895556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				A40E7B0E1A3B1BC30095A1A6 /* BaseTreeSearching.swift */,
+				A48D84C41A3D45F600BB5B55 /* MySearching.swift */,
 			);
 			name = Algorithm;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				A40E7B0F1A3B1BC30095A1A6 /* BaseTreeSearching.swift in Sources */,
 				A4FAC69E1A3AD1C200895556 /* HelpMethod.swift in Sources */,
 				A4FAC69A1A3AD10A00895556 /* PointView.swift in Sources */,
+				A48D84C51A3D45F600BB5B55 /* MySearching.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

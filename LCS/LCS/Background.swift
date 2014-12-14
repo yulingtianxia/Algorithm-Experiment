@@ -18,7 +18,11 @@ class Background: NSView,NSTextFieldDelegate,NSMatrixDelegate {
     
     @IBOutlet weak var timeCost:NSTextField!
     
-    var mode = 0;
+    var mode:Int = 0{
+        didSet{
+            run();
+        }
+    }
     var lcs = LCS()
     var beginTime = NSDate(timeIntervalSince1970: 0)
     var endTime = NSDate(timeIntervalSince1970: 0)
@@ -34,6 +38,10 @@ class Background: NSView,NSTextFieldDelegate,NSMatrixDelegate {
     }
     
     override func controlTextDidChange(obj: NSNotification) {
+        run();
+    }
+    
+    func run(){
         beginTime = NSDate();
         switch mode{
         case 0:
@@ -46,7 +54,6 @@ class Background: NSView,NSTextFieldDelegate,NSMatrixDelegate {
         endTime = NSDate();
         timeCost.stringValue = costTime.description
     }
-    
     @IBAction func radioButtonclicked(sender:NSMatrix){
         switch (sender.selectedCell() as NSButtonCell).title {
         case "分治技术":
