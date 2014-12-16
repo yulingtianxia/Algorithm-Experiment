@@ -21,7 +21,7 @@ class Background: NSView, ChooseAlgorithm {
             case .BaseTreeSearch:
                 generator = BaseTreeSearching()
             case .HillClimbing:
-                generator = BaseTreeSearching()
+                generator = HillClimbingSearch()
             case .MySearch:
                 generator = MySearching()
             default:

@@ -18,12 +18,14 @@ class BaseTreeSearching: NSObject,HamiltonianGenerator {
     }
     var sortedPoints:[PointView] = []
     var success = false
-    var preprocessor:(points:[PointView])->Bool = {(points) in return true}
+    var points:[PointView]!
+    var preprocessor:()->Bool = {return true}
     func generateHamiltonian(inout points:[PointView])->[PointView] {
+        self.points = points
         beginTime = NSDate()
         success = false
         sortedPoints.removeAll(keepCapacity: false)
-        if preprocessor(points: points) {
+        if preprocessor() {
             if points.count>0 {
                 backtracking(points, neighbour: points[0])
             }

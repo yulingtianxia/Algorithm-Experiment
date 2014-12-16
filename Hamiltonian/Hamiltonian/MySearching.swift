@@ -11,8 +11,8 @@ import Cocoa
 class MySearching: BaseTreeSearching {
     override init(){
         super.init()
-        preprocessor = { (points:[PointView])->Bool in
-            for point in points {
+        preprocessor = { ()->Bool in
+            for point in self.points {
                 if point.neighbours.count <= 1 {
                     return false
                 }
