@@ -8,7 +8,7 @@
 
 import Cocoa
 
-protocol HamiltonianGenerator{
+protocol HamiltonianGenerator: class{
     var beginTime:NSDate{get set}
     var endTime:NSDate{get set}
     var costTime:NSTimeInterval{get}

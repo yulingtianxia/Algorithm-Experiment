@@ -6,6 +6,8 @@ Algorithm experiment code written by Swift
 This is a worksapce built on target OSX 10.10. It contains several projects:  
 - ConvexHull
 - LCS
+- Hamiltonian Cycle
+- N-Queen
 
 ##Environment
 OSX Yosemite  
@@ -24,3 +26,6 @@ Dynamic Programming
 BaseTreeSearch:Base back tracking,cut limb that had been searched.
 HillClimbing:When searching neighbours,select the node that has minimum neighbours.   
 ![](http://7ni3rk.com1.z0.glb.clouddn.com/QQ20141217-1@2x.png)  
+
+###N-Queen
+To save time, I implement this question with C++. The solution uses backtracking and random algorithm. 
