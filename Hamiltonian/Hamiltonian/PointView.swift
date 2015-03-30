@@ -47,14 +47,14 @@ class PointView: NSImageView {
     }
 
     override func rightMouseUp(theEvent: NSEvent) {
-        if (superview as Background).linking {
-            (superview as Background).linkBlock = {self}
-            (superview as Background).linking = false
+        if (superview as! Background).linking {
+            (superview as! Background).linkBlock = {self}
+            (superview as! Background).linking = false
             (superview as? Background)?.makeHamiltonian()
         }
         else{
-            (superview as Background).linkBlock = {self}
-            (superview as Background).linking = true
+            (superview as! Background).linkBlock = {self}
+            (superview as! Background).linking = true
         }
     }
     

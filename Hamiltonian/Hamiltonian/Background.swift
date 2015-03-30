@@ -129,10 +129,10 @@ class Background: NSView, ChooseAlgorithm {
     func makeHamiltonian(){
         result = generator?.generateHamiltonian(&points)
         if let cost = generator?.costTime {
-            (costTimeLabel.cell() as NSTextFieldCell).title = "\(cost*1000)"
+            (costTimeLabel.cell() as! NSTextFieldCell).title = "\(cost*1000)"
         }
         else{
-            (costTimeLabel.cell() as NSTextFieldCell).title = "运行时间"
+            (costTimeLabel.cell() as! NSTextFieldCell).title = "运行时间"
         }
         setNeedsDisplayInRect(frame)
     }
@@ -149,7 +149,7 @@ class Background: NSView, ChooseAlgorithm {
     }
     
     @IBAction func radioButtonclicked(sender:NSMatrix){
-        switch (sender.selectedCell() as NSButtonCell).title {
+        switch (sender.selectedCell() as! NSButtonCell).title {
         case "基本搜索":
             algorithmSelected = Algorithm.BaseTreeSearch
         case "爬山法":

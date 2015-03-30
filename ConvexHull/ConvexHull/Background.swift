@@ -95,10 +95,10 @@ class Background: NSView, ChooseAlgorithm {
     func makeConvexHull() {
         generator?.generateConvexHull(&points)
         if let cost = generator?.costTime {
-            (costTimeLabel.cell() as NSTextFieldCell).title = "\(cost*1000)"
+            (costTimeLabel.cell() as! NSTextFieldCell).title = "\(cost*1000)"
         }
         else{
-            (costTimeLabel.cell() as NSTextFieldCell).title = "no"
+            (costTimeLabel.cell() as! NSTextFieldCell).title = "no"
         }
         setNeedsDisplayInRect(frame)
     }

@@ -22,10 +22,10 @@ class HillClimbingSearch: BaseTreeSearching {
         sortedPoints.append(neighbour)
         neighbour.image = NSImage(named: "RedPoint")
         var sortedSet = sortedPoints.last!.neighbours.sortedArrayUsingDescriptors([NSSortDescriptor(key: "neighbours", ascending: true, comparator: { (a, b) -> NSComparisonResult in
-            if (a as NSMutableSet).count < (b as NSMutableSet).count {
+            if (a as! NSMutableSet).count < (b as! NSMutableSet).count {
                 return .OrderedAscending
             }
-            else if (a as NSMutableSet).count > (b as NSMutableSet).count{
+            else if (a as! NSMutableSet).count > (b as! NSMutableSet).count{
                 return .OrderedDescending
             }
             else{
@@ -43,11 +43,11 @@ class HillClimbingSearch: BaseTreeSearching {
                         continue
                     }
                 }
-                else if checkPoint(point as PointView, inPoints: sortedPoints) {
+                else if checkPoint(point as! PointView, inPoints: sortedPoints) {
                     continue
                 }
                 else {
-                    backtracking(points, neighbour: point as PointView)
+                    backtracking(points, neighbour: point as! PointView)
                 }
             }
         }

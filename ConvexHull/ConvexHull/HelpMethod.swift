@@ -25,7 +25,7 @@ func == (left: PointView, right: PointView) -> Bool {
 }
 
 func getAppDelegate() -> AppDelegate{
-    return NSApplication.sharedApplication().delegate as AppDelegate
+    return NSApplication.sharedApplication().delegate as! AppDelegate
 }
 
 func calculatePoint(pointP:CGPoint,onLine line:(pointA:CGPoint,pointB:CGPoint)) -> CGFloat {

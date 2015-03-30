@@ -55,7 +55,7 @@ class Background: NSView,NSTextFieldDelegate,NSMatrixDelegate {
         timeCost.stringValue = costTime.description
     }
     @IBAction func radioButtonclicked(sender:NSMatrix){
-        switch (sender.selectedCell() as NSButtonCell).title {
+        switch (sender.selectedCell() as! NSButtonCell).title {
         case "分治技术":
             mode = 0
         case "动态规划":

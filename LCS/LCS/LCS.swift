@@ -16,8 +16,8 @@ class LCS: NSObject {
     
     func calculateLCS(x:String,y:String) -> String{
         result = ""
-        let m = countElements(x)
-        let n = countElements(y)
+        let m = count(x)
+        let n = count(y)
         C = [[Int]](count:m+1,repeatedValue:[Int](count:n+1,repeatedValue:0))
         B = [[Int]](count:m+1,repeatedValue:[Int](count:n+1,repeatedValue:0))
         for (i,charx) in enumerate(x) {
@@ -63,8 +63,8 @@ class LCS: NSObject {
     }
     
     func simpleLCS(x:String,y:String)->String{
-        let m = countElements(x)
-        let n = countElements(y)
+        let m = count(x)
+        let n = count(y)
         if m==0||n==0 {
             return ""
         }
@@ -84,7 +84,7 @@ class LCS: NSObject {
         else {
             let z1 = simpleLCS(x.substringToIndex(x.endIndex.predecessor()), y: y)
             let z2 = simpleLCS(x, y: y.substringToIndex(y.endIndex.predecessor()))
-            return countElements(z1) > countElements(z2) ? z1 : z2
+            return count(z1) > count(z2) ? z1 : z2
         }
     }
 }

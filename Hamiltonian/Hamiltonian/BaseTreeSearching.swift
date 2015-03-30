@@ -38,7 +38,7 @@ class BaseTreeSearching: NSObject,HamiltonianGenerator {
         sortedPoints.append(neighbour)
         neighbour.image = NSImage(named: "RedPoint")
         for point in sortedPoints.last!.neighbours {
-            if (point as PointView).position == sortedPoints[0].position {
+            if (point as! PointView).position == sortedPoints[0].position {
                 if sortedPoints.count == points.count {
                     success = true
                     return
@@ -47,11 +47,11 @@ class BaseTreeSearching: NSObject,HamiltonianGenerator {
                     continue
                 }
             }
-            else if checkPoint(point as PointView, inPoints: sortedPoints) {
+            else if checkPoint(point as! PointView, inPoints: sortedPoints) {
                 continue
             }
             else {
-                backtracking(points, neighbour: point as PointView)
+                backtracking(points, neighbour: point as! PointView)
             }
         }
         if !success {
