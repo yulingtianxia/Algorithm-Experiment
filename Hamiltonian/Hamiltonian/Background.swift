@@ -90,7 +90,7 @@ class Background: NSView, ChooseAlgorithm {
                 locations.append(point.position)
             }
         }
-        CGPathAddLines(hamiltonianPath, nil, locations, UInt(locations.count))
+        CGPathAddLines(hamiltonianPath, nil, &locations, locations.count)
         if !locations.isEmpty {
             CGPathCloseSubpath(hamiltonianPath)
         }

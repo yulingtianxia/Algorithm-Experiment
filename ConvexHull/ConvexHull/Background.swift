@@ -49,7 +49,7 @@ class Background: NSView, ChooseAlgorithm {
                 locations.append(point.position)
             }
         }
-        CGPathAddLines(path, nil, locations, UInt(locations.count))
+        CGPathAddLines(path, nil, &locations, locations.count)
         if !locations.isEmpty {
             CGPathCloseSubpath(path)
         }
