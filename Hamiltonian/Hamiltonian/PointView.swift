@@ -39,7 +39,7 @@ class PointView: NSImageView {
     }
     
     override func mouseDragged(theEvent: NSEvent) {
-        let delta = convertPoint(theEvent.locationInWindow, fromView: nil)
+//        let delta = convertPoint(theEvent.locationInWindow, fromView: nil)
         if let location = superview?.convertPoint(theEvent.locationInWindow, fromView: nil) {
             position = location
             (superview as? Background)?.setNeedsDisplayInRect(superview!.frame)

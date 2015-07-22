@@ -37,18 +37,18 @@ class DivideAndConquer: NSObject, ConvexHullGenerator {
                 minYPoint = point.position.y < minYPoint.position.y ? point : minYPoint
                 maxYPoint = point.position.y > maxYPoint.position.y ? point : maxYPoint
             }
-            var midPoint = CGPoint(x:(minYPoint.position.x + maxYPoint.position.x)/2,y:(minYPoint.position.y + maxYPoint.position.y)/2)
+            let midPoint = CGPoint(x:(minYPoint.position.x + maxYPoint.position.x)/2,y:(minYPoint.position.y + maxYPoint.position.y)/2)
             return midPoint
         }
         
         func counterclockwiseSort(inout points: [PointView],midPoint:CGPoint) {
-            points.sort {
-                return calculatePolarAngle(midPoint, $0.position) < calculatePolarAngle(midPoint, $1.position)
+            points.sortInPlace {
+                return calculatePolarAngle(midPoint, target: $0.position) < calculatePolarAngle(midPoint, target: $1.position)
             }
         }
         
         if points.count == 3 {
-            counterclockwiseSort(&points,midPoint(points)!)
+            counterclockwiseSort(&points,midPoint: midPoint(points)!)
             return
         }
         
@@ -80,7 +80,7 @@ class DivideAndConquer: NSObject, ConvexHullGenerator {
         var combine = left + right
         let middle = midPoint(left) ?? midPoint(right)
         //FIXME: combine
-        counterclockwiseSort(&combine,middle!)
+        counterclockwiseSort(&combine,midPoint: middle!)
         
 //        for com in combine {
 //            println(com.position)
@@ -143,16 +143,6 @@ class DivideAndConquer: NSObject, ConvexHullGenerator {
             for var index = 0; index<count; ++index {
                 points.insert(points.last!, atIndex: 0)
                 points.removeLast()
-            }
-        }
-        
-        func mergeSort(arrayA:[PointView],arrayB:[PointView],arrayC:[PointView]) {
-            var pA = 0
-            var pB = 0
-            var pC = 0
-            var sum = arrayA.count + arrayB.count + arrayC.count
-            while sum-- > 0 {
-                
             }
         }
         endTime = NSDate()

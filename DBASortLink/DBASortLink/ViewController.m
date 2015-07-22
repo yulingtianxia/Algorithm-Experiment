@@ -24,7 +24,7 @@ NSArray *dataArray;
 }
 
 - (void)setRepresentedObject:(id)representedObject {
-    [super setRepresentedObject:representedObject];
+    super.representedObject = representedObject;
 
     // Update the view, if already loaded.
 }

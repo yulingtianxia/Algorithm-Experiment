@@ -29,12 +29,12 @@ class GrahamScan: NSObject,ConvexHullGenerator {
         
         var minYPoint = points[0]
         var minIndex = 0
-        for (index,point) in enumerate(points) {
+        for (index,point) in points.enumerate() {
             (minIndex,minYPoint) = point.position.y < minYPoint.position.y ? (index,point) : (minIndex,minYPoint)
         }
         points.removeAtIndex(minIndex)
-        points.sort {
-            return calculatePolarAngle(minYPoint.position, $0.position) < calculatePolarAngle(minYPoint.position, $1.position)
+        points.sortInPlace {
+            return calculatePolarAngle(minYPoint.position, target: $0.position) < calculatePolarAngle(minYPoint.position, target: $1.position)
         }
         var stack = [minYPoint]
         var restPoints = [PointView]()

@@ -23,8 +23,6 @@ class Background: NSView, ChooseAlgorithm {
                 generator = GrahamScan()
             case .DivideAndConquer:
                 generator = DivideAndConquer()
-            default:
-                generator = BruteForceCH()
             }
             makeConvexHull()
         }
@@ -42,7 +40,7 @@ class Background: NSView, ChooseAlgorithm {
             return
         }
         
-        var path = CGPathCreateMutable()
+        let path = CGPathCreateMutable()
         var locations:[CGPoint] = []
         for point in points {
             if point.isConvexHullNode {
@@ -53,13 +51,13 @@ class Background: NSView, ChooseAlgorithm {
         if !locations.isEmpty {
             CGPathCloseSubpath(path)
         }
-        var context = NSGraphicsContext.currentContext()?.CGContext
+        let context = NSGraphicsContext.currentContext()?.CGContext
         CGContextClearRect(context, NSRect(origin: CGPointZero, size: frame.size))
         CGContextAddPath(context, path)
-        CGContextSetLineJoin(context, kCGLineJoinRound)
+        CGContextSetLineJoin(context, CGLineJoin.Round)
         CGContextSetLineWidth(context, 5.0)
         NSColor.redColor().setStroke()
-        CGContextDrawPath(context, kCGPathStroke)
+        CGContextDrawPath(context, CGPathDrawingMode.Stroke)
         
         
     }
@@ -95,10 +93,10 @@ class Background: NSView, ChooseAlgorithm {
     func makeConvexHull() {
         generator?.generateConvexHull(&points)
         if let cost = generator?.costTime {
-            (costTimeLabel.cell() as! NSTextFieldCell).title = "\(cost*1000)"
+            (costTimeLabel.cell as! NSTextFieldCell).title = "\(cost*1000)"
         }
         else{
-            (costTimeLabel.cell() as! NSTextFieldCell).title = "no"
+            (costTimeLabel.cell as! NSTextFieldCell).title = "no"
         }
         setNeedsDisplayInRect(frame)
     }

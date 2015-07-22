@@ -60,10 +60,10 @@ class BruteForceCH: NSObject,ConvexHullGenerator {
         var sl = points.filter {
             calculatePoint($0.position, onLine: (minXPoint.position,maxXPoint.position)) < 0
         }
-        su = su.sorted {
+        su = su.sort {
             return ($0.position as CGPoint).x > ($1.position as CGPoint).x
         }
-        sl = sl.sorted {
+        sl = sl.sort {
             return ($0.position as CGPoint).x < ($1.position as CGPoint).x
         }
         var result = [minXPoint]

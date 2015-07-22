@@ -24,8 +24,6 @@ class Background: NSView, ChooseAlgorithm {
                 generator = HillClimbingSearch()
             case .MySearch:
                 generator = MySearching()
-            default:
-                generator = BaseTreeSearching()
             }
             makeHamiltonian()
         }
@@ -65,7 +63,7 @@ class Background: NSView, ChooseAlgorithm {
             return
         }
         
-        var path = CGPathCreateMutable()
+        let path = CGPathCreateMutable()
         for point in points {
             for neighbour in point.neighbours {
                 CGPathMoveToPoint(path, nil, point.position.x, point.position.y)
@@ -74,16 +72,16 @@ class Background: NSView, ChooseAlgorithm {
         }
         
         
-        var context = NSGraphicsContext.currentContext()?.CGContext
+        let context = NSGraphicsContext.currentContext()?.CGContext
         CGContextClearRect(context, NSRect(origin: CGPointZero, size: frame.size))
         CGContextAddPath(context, path)
-        CGContextSetLineJoin(context, kCGLineJoinRound)
-        CGContextSetLineCap(context, kCGLineCapRound)
+        CGContextSetLineJoin(context, CGLineJoin.Round)
+        CGContextSetLineCap(context, CGLineCap.Round)
         CGContextSetLineWidth(context, 5.0)
         NSColor.redColor().setStroke()
-        CGContextDrawPath(context, kCGPathStroke)
+        CGContextDrawPath(context, CGPathDrawingMode.Stroke)
         
-        var hamiltonianPath = CGPathCreateMutable()
+        let hamiltonianPath = CGPathCreateMutable()
         var locations:[CGPoint] = []
         if result != nil {
             for point in result! {
@@ -96,7 +94,7 @@ class Background: NSView, ChooseAlgorithm {
         }
         CGContextAddPath(context, hamiltonianPath)
         NSColor.greenColor().setStroke()
-        CGContextDrawPath(context, kCGPathStroke)
+        CGContextDrawPath(context, CGPathDrawingMode.Stroke)
     }
     
     override func viewWillMoveToWindow(newWindow: NSWindow?) {
@@ -129,10 +127,10 @@ class Background: NSView, ChooseAlgorithm {
     func makeHamiltonian(){
         result = generator?.generateHamiltonian(&points)
         if let cost = generator?.costTime {
-            (costTimeLabel.cell() as! NSTextFieldCell).title = "\(cost*1000)"
+            (costTimeLabel.cell as! NSTextFieldCell).title = "\(cost*1000)"
         }
         else{
-            (costTimeLabel.cell() as! NSTextFieldCell).title = "运行时间"
+            (costTimeLabel.cell as! NSTextFieldCell).title = "运行时间"
         }
         setNeedsDisplayInRect(frame)
     }

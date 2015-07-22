@@ -16,12 +16,12 @@ class LCS: NSObject {
     
     func calculateLCS(x:String,y:String) -> String{
         result = ""
-        let m = count(x)
-        let n = count(y)
+        let m = x.characters.count
+        let n = y.characters.count
         C = [[Int]](count:m+1,repeatedValue:[Int](count:n+1,repeatedValue:0))
         B = [[Int]](count:m+1,repeatedValue:[Int](count:n+1,repeatedValue:0))
-        for (i,charx) in enumerate(x) {
-            for (j,chary) in enumerate(y) {
+        for (i,charx) in x.characters.enumerate() {
+            for (j,chary) in y.characters.enumerate() {
                 if charx==chary {
                     C[i+1][j+1] = C[i][j] + 1
                     B[i+1][j+1] = 1
@@ -37,7 +37,7 @@ class LCS: NSObject {
             }
         }
         var chars = [Character]()
-        for char in x {
+        for char in x.characters {
             chars.append(char)
         }
         
@@ -51,7 +51,7 @@ class LCS: NSObject {
         }
         if B[i][j]==1 {
             printLCS(x, i: i-1, j: j-1)
-            let range = Range(start: i, end: i)
+//            let range = Range(start: i, end: i)
             result.append(x[i-1])
         }
         else if B[i][j]==2 {
@@ -63,17 +63,17 @@ class LCS: NSObject {
     }
     
     func simpleLCS(x:String,y:String)->String{
-        let m = count(x)
-        let n = count(y)
+        let m = x.characters.count
+        let n = y.characters.count
         if m==0||n==0 {
             return ""
         }
         var charsX = [Character]()
         var charsY = [Character]()
-        for char in x {
+        for char in x.characters {
             charsX.append(char)
         }
-        for char in y {
+        for char in y.characters {
             charsY.append(char)
         }
         if charsX[m-1]==charsY[n-1] {
@@ -84,7 +84,7 @@ class LCS: NSObject {
         else {
             let z1 = simpleLCS(x.substringToIndex(x.endIndex.predecessor()), y: y)
             let z2 = simpleLCS(x, y: y.substringToIndex(y.endIndex.predecessor()))
-            return count(z1) > count(z2) ? z1 : z2
+            return z1.characters.count > z2.characters.count ? z1 : z2
         }
     }
 }

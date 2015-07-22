@@ -46,11 +46,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         case "3000":
             chooseDelegate?.pointNumSelected = 3000
         case let x:
-            if let num = x.toInt() {
+            if let num = Int(x) {
                 chooseDelegate?.pointNumSelected = UInt32(num)
             }
-        default:
-            chooseDelegate?.pointNumSelected = 0
         }
     }
     
