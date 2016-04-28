@@ -140,7 +140,7 @@ class DivideAndConquer: NSObject, ConvexHullGenerator {
         restPoints.removeAll(keepCapacity: false)
         
         func adjustSort(inout points:[PointView],count:Int) {
-            for var index = 0; index<count; ++index {
+            for _ in 0 ..< count {
                 points.insert(points.last!, atIndex: 0)
                 points.removeLast()
             }
