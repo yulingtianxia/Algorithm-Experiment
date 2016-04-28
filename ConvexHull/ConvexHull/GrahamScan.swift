@@ -39,12 +39,19 @@ class GrahamScan: NSObject,ConvexHullGenerator {
         var stack = [minYPoint]
         var restPoints = [PointView]()
         stack.append(points[0])
-        stack.append(points[1])
-        for point in points[2..<points.count] {
-            while checkPoint(stack.last!.position, inTriangle: (stack[0].position,stack[stack.count-2].position,point.position)) {
+        
+        for point in points[1..<points.count] {
+            
+            func checkTurnsRight() -> Bool {
+                let p1 = stack[stack.count-2].position
+                let p2 = stack.last!.position
+                let p3 = point.position
+                return (p2.x - p1.x) * (p3.y - p1.y) - (p2.y - p1.y) * (p3.x - p1.x) <= 0
+            }
+            
+            while checkTurnsRight() {
                 stack.last?.isConvexHullNode = false
                 restPoints.append(stack.last!)
-//                println(stack.last!)
                 stack.removeLast()
                 if stack.count < 3 {
                     break

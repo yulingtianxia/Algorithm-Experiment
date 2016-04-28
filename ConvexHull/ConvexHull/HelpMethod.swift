@@ -50,7 +50,7 @@ func checkPoint(P:CGPoint,inTriangle triangle:(A:CGPoint,B:CGPoint,C:CGPoint)) -
     return AB && AC && BC
 }
 
-func calculatePolarAngle(origin:CGPoint, target:CGPoint) -> Double{
+func calculatePolarAngle(origin:CGPoint, target:CGPoint) -> Double {
     let trans = (x: target.x - origin.x, y: target.y - origin.y)
     let angle = atan(Double(trans.y) / Double(trans.x))
     switch trans {
@@ -66,4 +66,3 @@ func calculatePolarAngle(origin:CGPoint, target:CGPoint) -> Double{
         return 0
     }
 }
-
