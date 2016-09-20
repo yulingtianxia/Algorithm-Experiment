@@ -31,8 +31,8 @@ class PointView: NSImageView {
         }
     }
 
-    override func drawRect(dirtyRect: NSRect) {
-        super.drawRect(dirtyRect)
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
 
         // Drawing code here.
     }
@@ -47,10 +47,10 @@ class PointView: NSImageView {
     }
     
     
-    override func mouseDragged(theEvent: NSEvent) {
+    override func mouseDragged(with theEvent: NSEvent) {
         
 //        let delta = convertPoint(theEvent.locationInWindow, fromView: nil)
-        if let location = superview?.convertPoint(theEvent.locationInWindow, fromView: nil) {
+        if let location = superview?.convert(theEvent.locationInWindow, from: nil) {
             position = location
             (superview as? Background)?.makeConvexHull()
         }

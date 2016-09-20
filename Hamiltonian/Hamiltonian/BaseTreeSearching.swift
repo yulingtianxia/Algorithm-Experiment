@@ -9,32 +9,32 @@
 import Cocoa
 
 class BaseTreeSearching: NSObject,HamiltonianGenerator {
-    var beginTime:NSDate = NSDate()
-    var endTime:NSDate = NSDate()
-    var costTime:NSTimeInterval {
+    var beginTime:Date = Date()
+    var endTime:Date = Date()
+    var costTime:TimeInterval {
         get{
-            return endTime.timeIntervalSinceDate(beginTime)
+            return endTime.timeIntervalSince(beginTime)
         }
     }
     var sortedPoints:[PointView] = []
     var success = false
     var points:[PointView]!
     var preprocessor:()->Bool = {return true}
-    func generateHamiltonian(inout points:[PointView])->[PointView] {
+    func generateHamiltonian(_ points:inout [PointView])->[PointView] {
         self.points = points
-        beginTime = NSDate()
+        beginTime = Date()
         success = false
-        sortedPoints.removeAll(keepCapacity: false)
+        sortedPoints.removeAll(keepingCapacity: false)
         if preprocessor() {
             if points.count>0 {
                 backtracking(points, neighbour: points[0])
             }
         }
-        endTime = NSDate()
+        endTime = Date()
         return sortedPoints
     }
     
-    func backtracking(points:[PointView],neighbour:PointView) {
+    func backtracking(_ points:[PointView],neighbour:PointView) {
         sortedPoints.append(neighbour)
         neighbour.image = NSImage(named: "RedPoint")
         for point in sortedPoints.last!.neighbours {
@@ -60,7 +60,7 @@ class BaseTreeSearching: NSObject,HamiltonianGenerator {
         }
     }
     
-    func checkPoint(aPoint:PointView,inPoints points:[PointView])->Bool {
+    func checkPoint(_ aPoint:PointView,inPoints points:[PointView])->Bool {
         for point in points {
             if point.position == aPoint.position {
                 return true;

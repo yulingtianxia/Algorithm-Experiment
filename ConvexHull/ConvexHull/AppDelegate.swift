@@ -14,28 +14,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     var chooseDelegate:ChooseAlgorithm?
 
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
     }
 
-    func applicationWillTerminate(aNotification: NSNotification) {
+    func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
 
-    @IBAction func selectAlgorithm(sender: NSMenuItem) {
+    @IBAction func selectAlgorithm(_ sender: NSMenuItem) {
         switch sender.title {
         case "蛮力法":
-            chooseDelegate?.algorithmSelected = .BruteForceCH
+            chooseDelegate?.algorithmSelected = .bruteForceCH
         case "GrahamScan":
-            chooseDelegate?.algorithmSelected = .GrahamScan
+            chooseDelegate?.algorithmSelected = .grahamScan
         case "DivideAndConquer":
-            chooseDelegate?.algorithmSelected = .DivideAndConquer
+            chooseDelegate?.algorithmSelected = .divideAndConquer
         default:
-            chooseDelegate?.algorithmSelected = .GrahamScan
+            chooseDelegate?.algorithmSelected = .grahamScan
         }
     }
     
-    @IBAction func selectPointSum(sender: NSMenuItem) {
+    @IBAction func selectPointSum(_ sender: NSMenuItem) {
         switch sender.title {
         case "0":
             chooseDelegate?.pointNumSelected = 0

@@ -15,14 +15,14 @@ class Background: NSView, ChooseAlgorithm {
     var points:[PointView] = []
     var result:[PointView]?
     var generator:HamiltonianGenerator?
-    var algorithmSelected:Algorithm = Algorithm.BaseTreeSearch {
+    var algorithmSelected:Algorithm = Algorithm.baseTreeSearch {
         willSet{
             switch newValue {
-            case .BaseTreeSearch:
+            case .baseTreeSearch:
                 generator = BaseTreeSearching()
-            case .HillClimbing:
+            case .hillClimbing:
                 generator = HillClimbingSearch()
-            case .MySearch:
+            case .mySearch:
                 generator = MySearching()
             }
             makeHamiltonian()
@@ -47,8 +47,8 @@ class Background: NSView, ChooseAlgorithm {
         }
         didSet{
             if !linking {
-                linkDestination?.neighbours.addObject(linkSource!)
-                linkSource?.neighbours.addObject(linkDestination!)
+                linkDestination?.neighbours.add(linkSource!)
+                linkSource?.neighbours.add(linkDestination!)
                 linkSource = nil
                 linkDestination = nil
             }
@@ -57,61 +57,61 @@ class Background: NSView, ChooseAlgorithm {
     var linkSource:PointView?
     var linkDestination:PointView?
     var linkBlock:()->PointView? = {return nil}
-    override func drawRect(dirtyRect: NSRect) {
-        super.drawRect(dirtyRect)
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
         if points.isEmpty {
             return
         }
         
-        let path = CGPathCreateMutable()
+        let path = CGMutablePath()
         for point in points {
             for neighbour in point.neighbours {
-                CGPathMoveToPoint(path, nil, point.position.x, point.position.y)
-                CGPathAddLineToPoint(path, nil, neighbour.position.x, neighbour.position.y)
+                path.move(to: CGPoint(x: point.position.x, y: point.position.y))
+                path.addLine(to: CGPoint(x: (neighbour as AnyObject).position.x, y: (neighbour as AnyObject).position.y))
             }
         }
         
         
-        let context = NSGraphicsContext.currentContext()?.CGContext
-        CGContextClearRect(context, NSRect(origin: CGPointZero, size: frame.size))
-        CGContextAddPath(context, path)
-        CGContextSetLineJoin(context, CGLineJoin.Round)
-        CGContextSetLineCap(context, CGLineCap.Round)
-        CGContextSetLineWidth(context, 5.0)
-        NSColor.redColor().setStroke()
-        CGContextDrawPath(context, CGPathDrawingMode.Stroke)
+        let context = NSGraphicsContext.current()?.cgContext
+        context?.clear(NSRect(origin: CGPoint.zero, size: frame.size))
+        context?.addPath(path)
+        context?.setLineJoin(CGLineJoin.round)
+        context?.setLineCap(CGLineCap.round)
+        context?.setLineWidth(5.0)
+        NSColor.red.setStroke()
+        context?.drawPath(using: CGPathDrawingMode.stroke)
         
-        let hamiltonianPath = CGPathCreateMutable()
+        let hamiltonianPath = CGMutablePath()
         var locations:[CGPoint] = []
         if result != nil {
             for point in result! {
                 locations.append(point.position)
             }
         }
-        CGPathAddLines(hamiltonianPath, nil, &locations, locations.count)
+        hamiltonianPath.addLines(between: locations)
         if !locations.isEmpty {
-            CGPathCloseSubpath(hamiltonianPath)
+            hamiltonianPath.closeSubpath()
         }
-        CGContextAddPath(context, hamiltonianPath)
-        NSColor.greenColor().setStroke()
-        CGContextDrawPath(context, CGPathDrawingMode.Stroke)
+        context?.addPath(hamiltonianPath)
+        NSColor.green.setStroke()
+        context?.drawPath(using: CGPathDrawingMode.stroke)
     }
     
-    override func viewWillMoveToWindow(newWindow: NSWindow?) {
-        super.viewWillMoveToWindow(newWindow)
+    override func viewWillMove(toWindow newWindow: NSWindow?) {
+        super.viewWillMove(toWindow: newWindow)
         size = newWindow?.frame.size
-        algorithmSelected = Algorithm.BaseTreeSearch
+        algorithmSelected = Algorithm.baseTreeSearch
     }
     
-    override func mouseUp(theEvent: NSEvent) {
+    override func mouseUp(with theEvent: NSEvent) {
         if theEvent.clickCount > 1 {
-            let location = convertPoint(theEvent.locationInWindow, fromView: nil)
+            let location = convert(theEvent.locationInWindow, from: nil)
             addPont(location)
             makeHamiltonian()
         }
     }
     
-    func addPont(location:CGPoint) {
+    func addPont(_ location:CGPoint) {
         let pointView = PointView(location: location)
         points.append(pointView)
         addSubview(pointView)
@@ -121,7 +121,7 @@ class Background: NSView, ChooseAlgorithm {
         for point in points {
             point.removeFromSuperview()
         }
-        points.removeAll(keepCapacity: false)
+        points.removeAll(keepingCapacity: false)
     }
     
     func makeHamiltonian(){
@@ -132,12 +132,12 @@ class Background: NSView, ChooseAlgorithm {
         else{
             (costTimeLabel.cell as! NSTextFieldCell).title = "运行时间"
         }
-        setNeedsDisplayInRect(frame)
+        setNeedsDisplay(frame)
     }
     
     
     
-    func createPointsWithNum(num:UInt32) {
+    func createPointsWithNum(_ num:UInt32) {
         clearPoints()
         for _ in 0..<num {
             let x = CGFloat(powf(Float(arc4random_uniform(UInt32(pow(size.width,2)))), 0.5))
@@ -146,16 +146,16 @@ class Background: NSView, ChooseAlgorithm {
         }
     }
     
-    @IBAction func radioButtonclicked(sender:NSMatrix){
+    @IBAction func radioButtonclicked(_ sender:NSMatrix){
         switch (sender.selectedCell() as! NSButtonCell).title {
         case "基本搜索":
-            algorithmSelected = Algorithm.BaseTreeSearch
+            algorithmSelected = Algorithm.baseTreeSearch
         case "爬山法":
-            algorithmSelected = Algorithm.HillClimbing
+            algorithmSelected = Algorithm.hillClimbing
         case "个性优化":
-            algorithmSelected = Algorithm.MySearch
+            algorithmSelected = Algorithm.mySearch
         default:
-            algorithmSelected = Algorithm.BaseTreeSearch
+            algorithmSelected = Algorithm.baseTreeSearch
         }
     }
     

@@ -24,25 +24,25 @@ class Background: NSView,NSTextFieldDelegate,NSMatrixDelegate {
         }
     }
     var lcs = LCS()
-    var beginTime = NSDate(timeIntervalSince1970: 0)
-    var endTime = NSDate(timeIntervalSince1970: 0)
-    var costTime:NSTimeInterval {
+    var beginTime = Date(timeIntervalSince1970: 0)
+    var endTime = Date(timeIntervalSince1970: 0)
+    var costTime:TimeInterval {
         get{
-            return endTime.timeIntervalSinceDate(beginTime)*1000
+            return endTime.timeIntervalSince(beginTime)*1000
         }
     }
-    override func drawRect(dirtyRect: NSRect) {
-        super.drawRect(dirtyRect)
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
 
         // Drawing code here.
     }
     
-    override func controlTextDidChange(obj: NSNotification) {
+    override func controlTextDidChange(_ obj: Notification) {
         run();
     }
     
     func run(){
-        beginTime = NSDate();
+        beginTime = Date();
         switch mode{
         case 0:
             result.stringValue = lcs.simpleLCS(sequenceA.stringValue, y: sequenceB.stringValue)
@@ -51,10 +51,10 @@ class Background: NSView,NSTextFieldDelegate,NSMatrixDelegate {
         default:
             result.stringValue = lcs.simpleLCS(sequenceA.stringValue, y: sequenceB.stringValue)
         }
-        endTime = NSDate();
+        endTime = Date();
         timeCost.stringValue = costTime.description
     }
-    @IBAction func radioButtonclicked(sender:NSMatrix){
+    @IBAction func radioButtonclicked(_ sender:NSMatrix){
         switch (sender.selectedCell() as! NSButtonCell).title {
         case "分治技术":
             mode = 0

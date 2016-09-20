@@ -14,14 +14,14 @@ class Background: NSView, ChooseAlgorithm {
     @IBOutlet weak var costTimeLabel: NSTextField!
     var points:[PointView] = []
     var generator:ConvexHullGenerator?
-    var algorithmSelected:Algorithm = Algorithm.BruteForceCH {
+    var algorithmSelected:Algorithm = Algorithm.bruteForceCH {
         willSet{
             switch newValue {
-            case .BruteForceCH:
+            case .bruteForceCH:
                 generator = BruteForceCH()
-            case .GrahamScan:
+            case .grahamScan:
                 generator = GrahamScan()
-            case .DivideAndConquer:
+            case .divideAndConquer:
                 generator = DivideAndConquer()
             }
             makeConvexHull()
@@ -34,50 +34,50 @@ class Background: NSView, ChooseAlgorithm {
         }
     }
     var size:CGSize!
-    override func drawRect(dirtyRect: NSRect) {
-        super.drawRect(dirtyRect)
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
         if points.isEmpty {
             return
         }
         
-        let path = CGPathCreateMutable()
+        let path = CGMutablePath()
         var locations:[CGPoint] = []
         for point in points {
             if point.isConvexHullNode {
                 locations.append(point.position)
             }
         }
-        CGPathAddLines(path, nil, &locations, locations.count)
+        path.addLines(between: locations)
         if !locations.isEmpty {
-            CGPathCloseSubpath(path)
+            path.closeSubpath()
         }
-        let context = NSGraphicsContext.currentContext()?.CGContext
-        CGContextClearRect(context, NSRect(origin: CGPointZero, size: frame.size))
-        CGContextAddPath(context, path)
-        CGContextSetLineJoin(context, CGLineJoin.Round)
-        CGContextSetLineWidth(context, 5.0)
-        NSColor.redColor().setStroke()
-        CGContextDrawPath(context, CGPathDrawingMode.Stroke)
+        let context = NSGraphicsContext.current()?.cgContext
+        context?.clear(NSRect(origin: CGPoint.zero, size: frame.size))
+        context?.addPath(path)
+        context?.setLineJoin(CGLineJoin.round)
+        context?.setLineWidth(5.0)
+        NSColor.red.setStroke()
+        context?.drawPath(using: CGPathDrawingMode.stroke)
         
         
     }
     
-    override func viewWillMoveToWindow(newWindow: NSWindow?) {
-        super.viewWillMoveToWindow(newWindow)
+    override func viewWillMove(toWindow newWindow: NSWindow?) {
+        super.viewWillMove(toWindow: newWindow)
         size = newWindow?.frame.size
 //        generator = BruteForceCH()
         getAppDelegate().chooseDelegate = self
     }
     
-    override func mouseUp(theEvent: NSEvent) {
+    override func mouseUp(with theEvent: NSEvent) {
         if theEvent.clickCount > 1 {
-            let location = convertPoint(theEvent.locationInWindow, fromView: nil)
+            let location = convert(theEvent.locationInWindow, from: nil)
             addPont(location)
             makeConvexHull()
         }
     }
     
-    func addPont(location:CGPoint) {
+    func addPont(_ location:CGPoint) {
         let pointView = PointView(location: location)
         points.append(pointView)
         addSubview(pointView)
@@ -87,7 +87,7 @@ class Background: NSView, ChooseAlgorithm {
         for point in points {
             point.removeFromSuperview()
         }
-        points.removeAll(keepCapacity: false)
+        points.removeAll(keepingCapacity: false)
     }
     
     func makeConvexHull() {
@@ -98,11 +98,11 @@ class Background: NSView, ChooseAlgorithm {
         else{
             (costTimeLabel.cell as! NSTextFieldCell).title = "no"
         }
-        setNeedsDisplayInRect(frame)
+        setNeedsDisplay(frame)
     }
     
     
-    func createPointsWithNum(num:UInt32) {
+    func createPointsWithNum(_ num:UInt32) {
         clearPoints()
         for _ in 0..<num {
             let x = CGFloat(powf(Float(arc4random_uniform(UInt32(pow(size.width,2)))), 0.5))

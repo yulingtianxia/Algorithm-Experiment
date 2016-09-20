@@ -15,9 +15,9 @@ protocol ChooseAlgorithm {
 }
 
 enum Algorithm {
-    case BruteForceCH
-    case GrahamScan
-    case DivideAndConquer
+    case bruteForceCH
+    case grahamScan
+    case divideAndConquer
 }
 
 func == (left: PointView, right: PointView) -> Bool {
@@ -25,14 +25,14 @@ func == (left: PointView, right: PointView) -> Bool {
 }
 
 func getAppDelegate() -> AppDelegate{
-    return NSApplication.sharedApplication().delegate as! AppDelegate
+    return NSApplication.shared().delegate as! AppDelegate
 }
 
-func calculatePoint(pointP:CGPoint,onLine line:(pointA:CGPoint,pointB:CGPoint)) -> CGFloat {
+func calculatePoint(_ pointP:CGPoint,onLine line:(pointA:CGPoint,pointB:CGPoint)) -> CGFloat {
     return (pointP.y - line.pointA.y) * (line.pointB.x - line.pointA.x) - (line.pointB.y - line.pointA.y) * (pointP.x - line.pointA.x)
 }
 
-func checkPoint(P:CGPoint,inTriangle triangle:(A:CGPoint,B:CGPoint,C:CGPoint)) -> Bool {
+func checkPoint(_ P:CGPoint,inTriangle triangle:(A:CGPoint,B:CGPoint,C:CGPoint)) -> Bool {
     var Pp = calculatePoint(P, onLine: (triangle.A,triangle.B))
     let AB = Pp == 0||Pp * calculatePoint(triangle.C, onLine: (triangle.A,triangle.B)) > 0
     if !AB{
@@ -49,7 +49,7 @@ func checkPoint(P:CGPoint,inTriangle triangle:(A:CGPoint,B:CGPoint,C:CGPoint)) -
     return AB && AC && BC
 }
 
-func calculatePolarAngle(origin:CGPoint, target:CGPoint) -> Double {
+func calculatePolarAngle(_ origin:CGPoint, target:CGPoint) -> Double {
     let trans = (x: target.x - origin.x, y: target.y - origin.y)
     let angle = atan(Double(trans.y) / Double(trans.x))
     switch trans {

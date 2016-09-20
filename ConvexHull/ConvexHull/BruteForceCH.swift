@@ -9,15 +9,15 @@
 import Cocoa
 
 class BruteForceCH: NSObject,ConvexHullGenerator {
-    var beginTime = NSDate(timeIntervalSince1970: 0)
-    var endTime = NSDate(timeIntervalSince1970: 0)
-    var costTime:NSTimeInterval {
+    var beginTime = Date(timeIntervalSince1970: 0)
+    var endTime = Date(timeIntervalSince1970: 0)
+    var costTime:TimeInterval {
         get{
-           return endTime.timeIntervalSinceDate(beginTime)
+           return endTime.timeIntervalSince(beginTime)
         }
     }
-    func generateConvexHull(inout points:[PointView]){
-        beginTime = NSDate()
+    func generateConvexHull(_ points:inout [PointView]){
+        beginTime = Date()
         for point in points {
             point.isConvexHullNode = true
         }
@@ -60,10 +60,10 @@ class BruteForceCH: NSObject,ConvexHullGenerator {
         var sl = points.filter {
             calculatePoint($0.position, onLine: (minXPoint.position,maxXPoint.position)) < 0
         }
-        su = su.sort {
+        su = su.sorted {
             return ($0.position as CGPoint).x > ($1.position as CGPoint).x
         }
-        sl = sl.sort {
+        sl = sl.sorted {
             return ($0.position as CGPoint).x < ($1.position as CGPoint).x
         }
         var result = [minXPoint]
@@ -71,7 +71,7 @@ class BruteForceCH: NSObject,ConvexHullGenerator {
         result.append(maxXPoint)
         result += su
         points = result
-        endTime = NSDate()
+        endTime = Date()
     }
     
 }

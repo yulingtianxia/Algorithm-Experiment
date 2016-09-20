@@ -9,10 +9,10 @@
 import Cocoa
 
 protocol ConvexHullGenerator{
-    var beginTime:NSDate{get set}
-    var endTime:NSDate{get set}
-    var costTime:NSTimeInterval{get}
-    func generateConvexHull(inout points:[PointView])
+    var beginTime:Date{get set}
+    var endTime:Date{get set}
+    var costTime:TimeInterval{get}
+    func generateConvexHull(_ points:inout [PointView])
 }
 
 class ViewController: NSViewController {
@@ -23,7 +23,7 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
     }
 
-    override var representedObject: AnyObject? {
+    override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
         }

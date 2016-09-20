@@ -23,8 +23,8 @@ class PointView: NSImageView {
     
     var neighbours:NSMutableSet = NSMutableSet()
     
-    override func drawRect(dirtyRect: NSRect) {
-        super.drawRect(dirtyRect)
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
         
         // Drawing code here.
     }
@@ -38,15 +38,15 @@ class PointView: NSImageView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func mouseDragged(theEvent: NSEvent) {
+    override func mouseDragged(with theEvent: NSEvent) {
 //        let delta = convertPoint(theEvent.locationInWindow, fromView: nil)
-        if let location = superview?.convertPoint(theEvent.locationInWindow, fromView: nil) {
+        if let location = superview?.convert(theEvent.locationInWindow, from: nil) {
             position = location
-            (superview as? Background)?.setNeedsDisplayInRect(superview!.frame)
+            (superview as? Background)?.setNeedsDisplay(superview!.frame)
         }
     }
 
-    override func rightMouseUp(theEvent: NSEvent) {
+    override func rightMouseUp(with theEvent: NSEvent) {
         if (superview as! Background).linking {
             (superview as! Background).linkBlock = {self}
             (superview as! Background).linking = false

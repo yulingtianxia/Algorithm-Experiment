@@ -14,14 +14,14 @@ class LCS: NSObject {
     var B = [[Int]]()
     var result:String = ""
     
-    func calculateLCS(x:String,y:String) -> String{
+    func calculateLCS(_ x:String,y:String) -> String{
         result = ""
         let m = x.characters.count
         let n = y.characters.count
-        C = [[Int]](count:m+1,repeatedValue:[Int](count:n+1,repeatedValue:0))
-        B = [[Int]](count:m+1,repeatedValue:[Int](count:n+1,repeatedValue:0))
-        for (i,charx) in x.characters.enumerate() {
-            for (j,chary) in y.characters.enumerate() {
+        C = [[Int]](repeating: [Int](repeating: 0,count: n+1),count: m+1)
+        B = [[Int]](repeating: [Int](repeating: 0,count: n+1),count: m+1)
+        for (i,charx) in x.characters.enumerated() {
+            for (j,chary) in y.characters.enumerated() {
                 if charx==chary {
                     C[i+1][j+1] = C[i][j] + 1
                     B[i+1][j+1] = 1
@@ -45,7 +45,7 @@ class LCS: NSObject {
         return result
     }
     
-    private func printLCS(x:[Character],i:Int,j:Int) {
+    fileprivate func printLCS(_ x:[Character],i:Int,j:Int) {
         if i==0||j==0 {
             return
         }
@@ -62,7 +62,7 @@ class LCS: NSObject {
         }
     }
     
-    func simpleLCS(x:String,y:String)->String{
+    func simpleLCS(_ x:String,y:String)->String{
         let m = x.characters.count
         let n = y.characters.count
         if m==0||n==0 {
@@ -77,13 +77,13 @@ class LCS: NSObject {
             charsY.append(char)
         }
         if charsX[m-1]==charsY[n-1] {
-            var result = simpleLCS(x.substringToIndex(x.endIndex.predecessor()), y: y.substringToIndex(y.endIndex.predecessor()))
+            var result = simpleLCS(x.substring(to: x.characters.index(before: x.endIndex)), y: y.substring(to: y.characters.index(before: y.endIndex)))
             result.append(charsX[m-1])
             return result
         }
         else {
-            let z1 = simpleLCS(x.substringToIndex(x.endIndex.predecessor()), y: y)
-            let z2 = simpleLCS(x, y: y.substringToIndex(y.endIndex.predecessor()))
+            let z1 = simpleLCS(x.substring(to: x.characters.index(before: x.endIndex)), y: y)
+            let z2 = simpleLCS(x, y: y.substring(to: y.characters.index(before: y.endIndex)))
             return z1.characters.count > z2.characters.count ? z1 : z2
         }
     }

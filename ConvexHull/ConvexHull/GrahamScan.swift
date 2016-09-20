@@ -10,15 +10,15 @@ import Cocoa
 import Foundation
 
 class GrahamScan: NSObject,ConvexHullGenerator {
-    var beginTime = NSDate(timeIntervalSince1970: 0)
-    var endTime = NSDate(timeIntervalSince1970: 0)
-    var costTime:NSTimeInterval {
+    var beginTime = Date(timeIntervalSince1970: 0)
+    var endTime = Date(timeIntervalSince1970: 0)
+    var costTime:TimeInterval {
         get{
-            return endTime.timeIntervalSinceDate(beginTime)
+            return endTime.timeIntervalSince(beginTime)
         }
     }
-    func generateConvexHull(inout points: [PointView]) {
-        beginTime = NSDate()
+    func generateConvexHull(_ points: inout [PointView]) {
+        beginTime = Date()
         for point in points {
             point.isConvexHullNode = true
         }
@@ -29,11 +29,11 @@ class GrahamScan: NSObject,ConvexHullGenerator {
         
         var minYPoint = points[0]
         var minIndex = 0
-        for (index,point) in points.enumerate() {
+        for (index,point) in points.enumerated() {
             (minIndex,minYPoint) = point.position.y < minYPoint.position.y ? (index,point) : (minIndex,minYPoint)
         }
-        points.removeAtIndex(minIndex)
-        points.sortInPlace {
+        points.remove(at: minIndex)
+        points.sort {
             return calculatePolarAngle(minYPoint.position, target: $0.position) < calculatePolarAngle(minYPoint.position, target: $1.position)
         }
         var stack = [minYPoint]
@@ -46,7 +46,8 @@ class GrahamScan: NSObject,ConvexHullGenerator {
                 let p1 = stack[stack.count-2].position
                 let p2 = stack.last!.position
                 let p3 = point.position
-                return (p2.x - p1.x) * (p3.y - p1.y) - (p2.y - p1.y) * (p3.x - p1.x) <= 0
+                let turnsRight = (p2.x - p1.x) * (p3.y - p1.y) - (p2.y - p1.y) * (p3.x - p1.x)
+                return (turnsRight <= 0)
             }
             
             while checkTurnsRight() {
@@ -60,7 +61,7 @@ class GrahamScan: NSObject,ConvexHullGenerator {
             stack.append(point)
         }
         points = stack + restPoints
-        endTime = NSDate()
+        endTime = Date()
     }
     
 }

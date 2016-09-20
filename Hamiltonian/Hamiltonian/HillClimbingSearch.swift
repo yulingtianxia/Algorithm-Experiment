@@ -12,29 +12,29 @@ class HillClimbingSearch: BaseTreeSearching {
     override init(){
         super.init()
         preprocessor = { ()->Bool in
-            self.points.sortInPlace({ (a, b) -> Bool in
+            self.points.sort(by: { (a, b) -> Bool in
                 return a.neighbours.count < b.neighbours.count
             })
             return true
         }
     }
-    override func backtracking(points: [PointView], neighbour: PointView) {
+    override func backtracking(_ points: [PointView], neighbour: PointView) {
         sortedPoints.append(neighbour)
         neighbour.image = NSImage(named: "RedPoint")
-        let sortedSet = sortedPoints.last!.neighbours.sortedArrayUsingDescriptors([NSSortDescriptor(key: "neighbours", ascending: true, comparator: { (a, b) -> NSComparisonResult in
+        let sortedSet = sortedPoints.last!.neighbours.sortedArray(using: [NSSortDescriptor(key: "neighbours", ascending: true, comparator: { (a, b) -> ComparisonResult in
             if (a as! NSMutableSet).count < (b as! NSMutableSet).count {
-                return .OrderedAscending
+                return .orderedAscending
             }
             else if (a as! NSMutableSet).count > (b as! NSMutableSet).count{
-                return .OrderedDescending
+                return .orderedDescending
             }
             else{
-                return .OrderedSame
+                return .orderedSame
             }
         })])
         if (sortedSet as? [PointView] != nil){
             for point in sortedSet {
-                if point.position == sortedPoints[0].position {
+                if (point as AnyObject).position == sortedPoints[0].position {
                     if sortedPoints.count == points.count {
                         success = true
                         return

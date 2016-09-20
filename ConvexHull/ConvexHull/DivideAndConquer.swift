@@ -13,20 +13,20 @@ import AppKit
 class DivideAndConquer: NSObject, ConvexHullGenerator {
     
     var restPoints = [PointView]()
-    var beginTime = NSDate(timeIntervalSince1970: 0)
-    var endTime = NSDate(timeIntervalSince1970: 0)
-    var costTime:NSTimeInterval {
+    var beginTime = Date(timeIntervalSince1970: 0)
+    var endTime = Date(timeIntervalSince1970: 0)
+    var costTime:TimeInterval {
         get{
-            return endTime.timeIntervalSinceDate(beginTime)
+            return endTime.timeIntervalSince(beginTime)
         }
     }
-    func Conquer(inout points: [PointView]) {
+    func Conquer(_ points: inout [PointView]) {
 //        println(points.count)
         if points.count < 3 {
             return
         }
         
-        func midPoint(points:[PointView]) -> CGPoint? {
+        func midPoint(_ points:[PointView]) -> CGPoint? {
             if points.count == 1 {
                 return nil
             }
@@ -41,8 +41,8 @@ class DivideAndConquer: NSObject, ConvexHullGenerator {
             return midPoint
         }
         
-        func counterclockwiseSort(inout points: [PointView],midPoint:CGPoint) {
-            points.sortInPlace {
+        func counterclockwiseSort(_ points: inout [PointView],midPoint:CGPoint) {
+            points.sort {
                 return calculatePolarAngle(midPoint, target: $0.position) < calculatePolarAngle(midPoint, target: $1.position)
             }
         }
@@ -110,7 +110,7 @@ class DivideAndConquer: NSObject, ConvexHullGenerator {
             while stack.count >= 2 && checkPoint(stack[0].position, inTriangle: (middle!,stack.last!.position,stack[1].position)) {
                 stack[0].isConvexHullNode = false
                 restPoints.append(stack[0])
-                stack.removeAtIndex(0)
+                stack.remove(at: 0)
                 if stack.count < 2 {
                     break
                 }
@@ -120,7 +120,7 @@ class DivideAndConquer: NSObject, ConvexHullGenerator {
         while stack.count >= 2 && checkPoint(stack[0].position, inTriangle: (middle!,stack.last!.position,stack[1].position)) {
             stack[0].isConvexHullNode = false
             restPoints.append(stack[0])
-            stack.removeAtIndex(0)
+            stack.remove(at: 0)
             if stack.count < 2 {
                 break
             }
@@ -129,22 +129,22 @@ class DivideAndConquer: NSObject, ConvexHullGenerator {
         points = stack
     }
     
-    func generateConvexHull(inout points: [PointView]) {
-        beginTime = NSDate()
+    func generateConvexHull(_ points: inout [PointView]) {
+        beginTime = Date()
         for point in points {
             point.isConvexHullNode = true
         }
         Conquer(&points)
         
         points += restPoints
-        restPoints.removeAll(keepCapacity: false)
+        restPoints.removeAll(keepingCapacity: false)
         
-        func adjustSort(inout points:[PointView],count:Int) {
+        func adjustSort(_ points:inout [PointView],count:Int) {
             for _ in 0 ..< count {
-                points.insert(points.last!, atIndex: 0)
+                points.insert(points.last!, at: 0)
                 points.removeLast()
             }
         }
-        endTime = NSDate()
+        endTime = Date()
     }
 }

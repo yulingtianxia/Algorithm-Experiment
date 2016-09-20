@@ -9,10 +9,10 @@
 import Cocoa
 
 protocol HamiltonianGenerator: class{
-    var beginTime:NSDate{get set}
-    var endTime:NSDate{get set}
-    var costTime:NSTimeInterval{get}
-    func generateHamiltonian(inout points:[PointView])->[PointView]
+    var beginTime:Date{get set}
+    var endTime:Date{get set}
+    var costTime:TimeInterval{get}
+    func generateHamiltonian(_ points:inout [PointView])->[PointView]
 }
 
 protocol ChooseAlgorithm {
@@ -20,8 +20,8 @@ protocol ChooseAlgorithm {
 }
 
 enum Algorithm {
-    case BaseTreeSearch
-    case HillClimbing
-    case MySearch
+    case baseTreeSearch
+    case hillClimbing
+    case mySearch
 }
 
